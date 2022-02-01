@@ -1,0 +1,37 @@
+.header {
+  width: 100%;
+  background-color: var(--clr-purple-500);
+}
+
+// logo
+
+.header__logo,
+.header__logo::before {
+  height: var(--width);
+  width: var(--width);
+}
+
+.header__logo {
+  --width: 4.5rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: var(--clr-purple-400);
+  border-radius: 0 1.25rem 1.25rem 0;
+  overflow: hidden;
+  position: relative;
+
+  &:before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    background-color: var(--clr-purple-300);
+    border-radius: 1.25rem 0 0 0;
+  }
+
+  svg {
+    z-index: 1;
+  }
+}

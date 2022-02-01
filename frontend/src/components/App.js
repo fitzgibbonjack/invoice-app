@@ -1,5 +1,7 @@
 import "./App.scss";
 
+import Header from "../components/Header/Header";
+
 export default function App() {
-  return <h1>Invoice App</h1>;
+  return <Header />;
 }
