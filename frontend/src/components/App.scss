@@ -1,0 +1,26 @@
+@import url("https://fonts.googleapis.com/css2?family=Spartan:wght@400;500;600;700&display=swap");
+
+html * {
+  font-family: "Spartan" !important;
+}
+
+body {
+  color: var(--clr-purple-700);
+}
+
+// variables
+body {
+  --clr-bg: hsl(240, 27, 98); // dark mode: hsl(233, 30, 11)
+
+  --clr-purple-700: hsl(228, 29, 7);
+  --clr-purple-600: hsl(233, 31, 17);
+  --clr-purple-500: hsl(233, 30, 21);
+  --clr-purple-400: hsl(252, 94, 67);
+  --clr-purple-300: hsl(252, 10-0, 73);
+  --clr-purple-200: hsl(231, 37, 63);
+  --clr-purple-100: hsl(231, 20, 61);
+  --clr-purple-000: hsl(231, 73, 93);
+
+  --clr-red-400: hsl(0, 80, 63);
+  --clr-red-300: hsl(0, 100, 80);
+}
