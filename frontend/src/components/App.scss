@@ -5,7 +5,9 @@ html * {
 }
 
 body {
+  background-color: var(--clr-bg);
   color: var(--clr-purple-700);
+  transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
 }
 
 // variables
@@ -23,4 +25,8 @@ body {
 
   --clr-red-400: hsl(0, 80%, 63%);
   --clr-red-300: hsl(0, 100%, 80%);
+}
+
+body.dark-mode {
+  --clr-bg: hsl(233, 30%, 11%);
 }
