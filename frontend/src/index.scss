@@ -12,12 +12,14 @@ html {
 }
 p {
   line-height: 1.5em;
-  margin-bottom: 2em;
 }
 a,
 a:visited,
 a:active {
   text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
 }
 img,
 picture {
@@ -31,6 +33,14 @@ li {
 button {
   background-color: transparent;
   border: none;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+label,
+input {
+  display: block;
 }
 
 @media (prefers-reduced-motion: reduce) {

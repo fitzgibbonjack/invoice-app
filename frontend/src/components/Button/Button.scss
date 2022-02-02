@@ -1,0 +1,10 @@
+.button {
+  padding: 1rem 1.5rem;
+  background-color: var(--clr-purple-400);
+  border-radius: 2rem;
+  transition: background 0.5s ease-in-out;
+
+  &:hover {
+    background-color: var(--clr-purple-300);
+  }
+}

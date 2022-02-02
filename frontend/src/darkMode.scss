@@ -1,0 +1,29 @@
+body.dark-mode {
+  --clr-bg: hsl(233, 30%, 11%);
+
+  .header {
+    background-color: var(--clr-purple-600);
+  }
+
+  label {
+    color: var(--clr-purple-000);
+  }
+
+  input {
+    background-color: var(--clr-purple-600);
+    border-color: var(--clr-purple-500);
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  input,
+  .modal__close {
+    color: white;
+  }
+
+  .modal {
+    background-color: rgba(65, 65, 65, 0.3);
+  }
+}

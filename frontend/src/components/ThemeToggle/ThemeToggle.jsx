@@ -28,7 +28,7 @@ export default function ThemeToggle({ className }) {
     if (darkMode === "true") {
       enableDarkMode();
     }
-  });
+  }, []);
 
   return (
     <button
@@ -37,7 +37,12 @@ export default function ThemeToggle({ className }) {
       onClick={toggleDarkMode}
       data-state={darkMode}
     >
-      <svg width="20" height="20" xmlns="http://www.w3.org/2000/svg">
+      <svg
+        aria-hidden="true"
+        width="20"
+        height="20"
+        xmlns="http://www.w3.org/2000/svg"
+      >
         <path fill="#7E88C3" fillRule="nonzero" />
       </svg>
     </button>

@@ -1,11 +1,17 @@
 import ThemeToggle from "../ThemeToggle/ThemeToggle";
+import Avatar from "../../assets/avatar.ico";
 import "./Header.scss";
 
 export default function Header() {
   return (
     <header className="header">
       <span className="header__logo">
-        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="26">
+        <svg
+          aria-hidden="true"
+          xmlns="http://www.w3.org/2000/svg"
+          width="28"
+          height="26"
+        >
           <path
             fill="#FFF"
             fillRule="evenodd"
@@ -16,7 +22,9 @@ export default function Header() {
 
       <ThemeToggle className="header__toggle" />
 
-      {/* user component */}
+      <div className="header__avatar">
+        <img src={Avatar} alt="avatar" />
+      </div>
     </header>
   );
 }

@@ -1,0 +1,15 @@
+label {
+  text-transform: capitalize;
+  margin-bottom: 0.625rem;
+}
+
+input {
+  padding: 1rem 1.25rem;
+  border: 1px solid var(--clr-purple-000);
+  border-radius: 0.25rem;
+  width: 100%;
+
+  &:focus {
+    outline: 1px solid var(--clr-purple-400);
+  }
+}

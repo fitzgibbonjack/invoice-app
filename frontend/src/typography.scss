@@ -1,0 +1,55 @@
+@import url("https://fonts.googleapis.com/css2?family=Spartan:wght@400;500;600;700&display=swap");
+
+html * {
+  font-family: "Spartan" !important;
+}
+
+button,
+label,
+input {
+  font-size: 0.75rem;
+}
+
+h1,
+h2,
+h3,
+h4,
+.modal__close {
+  color: var(--clr-purple-500);
+}
+
+body {
+  color: var(--clr-purple-700);
+}
+
+a {
+  color: var(--clr-purple-400);
+}
+
+button {
+  color: white;
+  font-weight: 700;
+}
+
+label {
+  font-weight: 500;
+  color: var(--clr-purple-100);
+}
+
+input {
+  font-weight: 700;
+  color: var(--clr-purple-700);
+}
+
+.modal__close {
+  font-size: 1rem;
+}
+
+.login__text {
+  font-size: 0.8rem;
+}
+
+.login__create {
+  color: var(--clr-purple-400);
+  font-weight: initial;
+}
