@@ -45,11 +45,17 @@ input {
   font-size: 1rem;
 }
 
-.login__text {
+.login__text,
+.signup__text {
   font-size: 0.8rem;
 }
 
-.login__create {
+.login__create,
+.signup__login {
   color: var(--clr-purple-400);
   font-weight: initial;
+}
+.error__message {
+  font-size: 0.8rem;
+  color: var(--clr-red-500);
 }

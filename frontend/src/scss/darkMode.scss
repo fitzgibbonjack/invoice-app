@@ -5,7 +5,8 @@ body.dark-mode {
     background-color: var(--clr-purple-600);
   }
 
-  label {
+  label,
+  p:not(.error__message) {
     color: var(--clr-purple-000);
   }
 

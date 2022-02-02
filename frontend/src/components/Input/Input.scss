@@ -6,7 +6,7 @@ label {
 input {
   padding: 1rem 1.25rem;
   border: 1px solid var(--clr-purple-000);
-  border-radius: 0.25rem;
+  border-radius: var(--br-300);
   width: 100%;
 
   &:focus {

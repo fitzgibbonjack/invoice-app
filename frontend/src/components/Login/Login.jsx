@@ -6,17 +6,17 @@ import "./Login.scss";
 export default function Login() {
   return (
     <div className="login">
-      <form role="main" action="" className="login__form">
-        <Input type="email" label="username" />
-        <Input type="password" label="password" />
+      <form action="" className="login__form">
+        <Input type="email" name="email" />
+        <Input type="password" name="password" />
 
-        <Button type="submit" className="login__submit">
+        <Button type="submit" className="login__submit" form="login">
           Log in
         </Button>
       </form>
       <p className="login__text">
         No account?{" "}
-        <button type="button" className="login__create">
+        <button type="submit" className="login__create">
           Create one
         </button>
       </p>
