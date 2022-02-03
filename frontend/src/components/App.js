@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
 import { UserProvider } from "../contexts/UserContext";
+import { AnimatePresence } from "framer-motion";
 
 import Header from "./Header/Header";
 import Invoices from "../pages/invoices/Invoices";
@@ -15,24 +16,13 @@ export default function App() {
 
   return (
     <UserProvider>
-      <Header />
-
-      <Routes location={background || location}>
-        <Route path="/" exact element={<Invoices />} />
-      </Routes>
-
-      {background && (
-        <Routes>
-          <Route
-            path="/login"
-            element={
-              <Modal title="Log in">
-                <Login />
-              </Modal>
-            }
-          />
+      <AnimatePresence>
+        <Header />
+        <Routes location={background || location} key="1">
+          <Route path="/" exact element={<Invoices />} />
 
           <Route
+            exact
             path="/signup"
             element={
               <Modal title="Sign up">
@@ -41,7 +31,30 @@ export default function App() {
             }
           />
         </Routes>
-      )}
+
+        {/* MODALS */}
+        {background && (
+          <Routes location={location} key="2">
+            <Route
+              path="/login"
+              element={
+                <Modal title="Log in">
+                  <Login />
+                </Modal>
+              }
+            />
+
+            <Route
+              path="/signup"
+              element={
+                <Modal title="Sign up">
+                  <Signup />
+                </Modal>
+              }
+            />
+          </Routes>
+        )}
+      </AnimatePresence>
     </UserProvider>
   );
 }

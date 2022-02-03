@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../../firebase";
+import { useNavigate } from "react-router-dom";
 
 import Input from "../Input/Input";
 import Button from "../Button/Button";
@@ -10,6 +11,7 @@ import "./Signup.scss";
 export default function Signup() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState();
+  const navigate = useNavigate();
 
   async function handleSubmit(e) {
     e.preventDefault();
@@ -28,9 +30,10 @@ export default function Signup() {
         formData.get("email"),
         formData.get("password")
       );
+      setLoading(false);
+      navigate("/");
     } catch (error) {
       setError(error.code);
-    } finally {
       setLoading(false);
     }
   }
@@ -48,12 +51,6 @@ export default function Signup() {
           Sign up
         </Button>
       </form>
-      <p className="signup__text">
-        Already have an account?{" "}
-        <button type="submit" className="signup__login">
-          Sign in
-        </button>
-      </p>
     </div>
   );
 }

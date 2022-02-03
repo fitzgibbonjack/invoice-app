@@ -21,7 +21,6 @@ export default function Login() {
   async function handleSubmit(e) {
     e.preventDefault();
     let formData = new FormData(e.currentTarget);
-
     try {
       setError("");
       setLoading(true);
@@ -30,7 +29,6 @@ export default function Login() {
         formData.get("email"),
         formData.get("password")
       );
-      console.log("Log in successful");
       closeModal();
     } catch (error) {
       setError(error.code);
@@ -52,10 +50,7 @@ export default function Login() {
         </Button>
       </form>
       <p className="login__text">
-        No account?{" "}
-        <Link to="/signup" state={{ background: location }}>
-          Create one
-        </Link>
+        No account? <Link to="/signup">Create one</Link>
       </p>
     </div>
   );
