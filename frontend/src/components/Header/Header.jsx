@@ -1,8 +1,11 @@
 import ThemeToggle from "../ThemeToggle/ThemeToggle";
 import Avatar from "../../assets/avatar.ico";
+import { useUser } from "../../contexts/UserContext";
 import "./Header.scss";
 
 export default function Header() {
+  const currentUser = useUser();
+
   return (
     <header className="header">
       <span className="header__logo">
@@ -23,7 +26,12 @@ export default function Header() {
       <ThemeToggle className="header__toggle" />
 
       <div className="header__avatar">
-        <img src={Avatar} alt="avatar" />
+        <img
+          src={
+            currentUser ? `https://avatar.tobi.sh/${currentUser.email}` : Avatar
+          }
+          alt="avatar"
+        />
       </div>
     </header>
   );

@@ -1,17 +1,15 @@
 import React, { useState } from "react";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../../firebase";
-import { useUser } from "../../contexts/UserContext";
 
 import Input from "../Input/Input";
 import Button from "../Button/Button";
 import Error from "../Error/Error";
 import "./Signup.scss";
 
-export default function Signup({ onClose }) {
+export default function Signup() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState();
-  const currentUser = useUser();
 
   async function handleSubmit(e) {
     e.preventDefault();
@@ -30,9 +28,10 @@ export default function Signup({ onClose }) {
         formData.get("email"),
         formData.get("password")
       );
-      onClose();
     } catch (error) {
       setError(error.code);
+    } finally {
+      setLoading(false);
     }
   }
 
