@@ -18,8 +18,12 @@ a:visited,
 a:active {
   text-decoration: none;
 }
-a:hover {
+a:hover,
+.anchor:hover {
   text-decoration: underline;
+}
+.button:hover {
+  text-decoration: none;
 }
 img,
 picture {

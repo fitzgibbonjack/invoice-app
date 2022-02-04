@@ -10,6 +10,10 @@ input {
   font-size: 0.75rem;
 }
 
+h1 {
+  font-size: 1.25rem;
+}
+
 h1,
 h2,
 h3,
@@ -22,11 +26,15 @@ body {
   color: var(--clr-purple-700);
 }
 
-a {
+a:not(.button) {
   color: var(--clr-purple-400);
+  font-size: 0.8rem;
+  font-weight: 700;
 }
 
-button {
+button,
+.button {
+  font-size: 0.8rem;
   color: white;
   font-weight: 700;
 }
@@ -58,4 +66,19 @@ input {
 .error__message {
   font-size: 0.8rem;
   color: var(--clr-red-500);
+}
+
+.splash__title {
+  font-size: 1.25rem;
+  letter-spacing: -0.625px;
+}
+
+.splash__text {
+  color: var(--clr-purple-100);
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.emphasis {
+  font-weight: 700;
 }

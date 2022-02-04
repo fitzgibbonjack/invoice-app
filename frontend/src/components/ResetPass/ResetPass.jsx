@@ -1,18 +1,19 @@
 import React, { useState } from "react";
-import { signInWithEmailAndPassword } from "firebase/auth";
-import { useNavigate, Link, useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { auth } from "../../firebase";
+import { sendPasswordResetEmail } from "firebase/auth";
+import { Link } from "react-router-dom";
 
-import Input from "../Input/Input";
 import Button from "../Button/Button";
+import Input from "../Input/Input";
 import Error from "../Error/Error";
-import "./Login.scss";
+import "./ResetPass.scss";
 
-export default function Login() {
+export default function ResetPass() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState();
   const navigate = useNavigate();
-  let location = useLocation();
+  const location = useLocation();
 
   const closeModal = () => {
     navigate(-1);
@@ -24,11 +25,7 @@ export default function Login() {
     try {
       setError("");
       setLoading(true);
-      await signInWithEmailAndPassword(
-        auth,
-        formData.get("email"),
-        formData.get("password")
-      );
+      await sendPasswordResetEmail(auth, formData.get("email"));
       closeModal();
     } catch (error) {
       setError(error.code);
@@ -38,20 +35,16 @@ export default function Login() {
   }
 
   return (
-    <div className="login">
+    <div className="reset">
       {error && <Error message={error} />}
 
-      <form className="login__form" onSubmit={handleSubmit}>
+      <form className="reset__form" onSubmit={handleSubmit}>
         <Input type="email" name="email" />
-        <Input type="password" name="password" />
 
-        <Button disabled={loading} type="submit" className="login__submit">
-          Log in
+        <Button disabled={loading} type="submit" className="reset__submit">
+          Send reset email
         </Button>
       </form>
-      <p className="login__text">
-        <Link to="/account/reset">Forgot password?</Link>
-      </p>
     </div>
   );
 }

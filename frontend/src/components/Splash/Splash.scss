@@ -1,0 +1,27 @@
+.splash {
+  width: clamp(16rem, 50%, 18rem);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.splash__img {
+  margin-bottom: 2.5rem;
+  margin-inline: auto;
+  width: 100%;
+}
+
+.splash__title,
+.splash__text {
+  margin-bottom: 1.5rem;
+}
+
+.splash__btns {
+  a {
+    display: block;
+    width: 100%;
+    margin-bottom: 1.5rem;
+  }
+}

@@ -4,10 +4,11 @@ import { UserProvider } from "../contexts/UserContext";
 import { AnimatePresence } from "framer-motion";
 
 import Header from "./Header/Header";
-import Invoices from "../pages/invoices/Invoices";
 import Modal from "./Modal/Modal";
 import Login from "./Login/Login";
 import Signup from "./Signup/Signup";
+import ResetPass from "./ResetPass/ResetPass";
+import Invoices from "../pages/invoices/Invoices";
 import "./App.scss";
 
 export default function App() {
@@ -20,13 +21,12 @@ export default function App() {
         <Header />
         <Routes location={background || location} key="1">
           <Route path="/" exact element={<Invoices />} />
-
+          {/* RESET PASS MODAL */}
           <Route
-            exact
-            path="/signup"
+            path="/account/reset"
             element={
-              <Modal title="Sign up">
-                <Signup />
+              <Modal title="Reset password">
+                <ResetPass />
               </Modal>
             }
           />
