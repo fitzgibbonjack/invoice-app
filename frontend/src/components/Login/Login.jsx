@@ -14,6 +14,8 @@ export default function Login() {
   const navigate = useNavigate();
   let location = useLocation();
 
+  console.log(location);
+
   const closeModal = () => {
     navigate(-1);
   };
@@ -49,9 +51,13 @@ export default function Login() {
           Log in
         </Button>
       </form>
-      <p className="login__text">
-        <Link to="/account/reset">Forgot password?</Link>
-      </p>
+      <Link
+        to="/reset-password"
+        state={location.state && { background: location.state.background }}
+        className="login__link"
+      >
+        Forgot password?
+      </Link>
     </div>
   );
 }

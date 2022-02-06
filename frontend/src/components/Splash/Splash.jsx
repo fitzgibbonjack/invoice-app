@@ -1,7 +1,5 @@
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
-import { signOut } from "firebase/auth";
-import { auth } from "../../firebase";
 import Illustration from "../../assets/illustration.svg";
 import "./Splash.scss";
 

@@ -19,17 +19,9 @@ export default function App() {
     <UserProvider>
       <AnimatePresence>
         <Header />
+
         <Routes location={background || location} key="1">
           <Route path="/" exact element={<Invoices />} />
-          {/* RESET PASS MODAL */}
-          <Route
-            path="/account/reset"
-            element={
-              <Modal title="Reset password">
-                <ResetPass />
-              </Modal>
-            }
-          />
         </Routes>
 
         {/* MODALS */}
@@ -49,6 +41,15 @@ export default function App() {
               element={
                 <Modal title="Sign up">
                   <Signup />
+                </Modal>
+              }
+            />
+
+            <Route
+              path="/reset-password"
+              element={
+                <Modal title="Reset password">
+                  <ResetPass />
                 </Modal>
               }
             />

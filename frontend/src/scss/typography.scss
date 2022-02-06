@@ -4,14 +4,15 @@ html * {
   font-family: "Spartan" !important;
 }
 
+body {
+  color: var(--clr-purple-700);
+  font-size: 0.75rem;
+}
+
 button,
 label,
 input {
   font-size: 0.75rem;
-}
-
-h1 {
-  font-size: 1.25rem;
 }
 
 h1,
@@ -22,21 +23,26 @@ h4,
   color: var(--clr-purple-500);
 }
 
-body {
-  color: var(--clr-purple-700);
+h1,
+h2,
+h3 {
+  font-size: 1.25rem;
 }
 
-a:not(.button) {
-  color: var(--clr-purple-400);
+a,
+button,
+.button {
   font-size: 0.8rem;
   font-weight: 700;
+}
+
+a {
+  color: var(--clr-purple-400);
 }
 
 button,
 .button {
-  font-size: 0.8rem;
   color: white;
-  font-weight: 700;
 }
 
 label {
@@ -53,24 +59,9 @@ input {
   font-size: 1rem;
 }
 
-.login__text,
-.signup__text {
-  font-size: 0.8rem;
-}
-
-.login__create,
-.signup__login {
-  color: var(--clr-purple-400);
-  font-weight: initial;
-}
 .error__message {
   font-size: 0.8rem;
   color: var(--clr-red-500);
-}
-
-.splash__title {
-  font-size: 1.25rem;
-  letter-spacing: -0.625px;
 }
 
 .splash__text {

@@ -1,5 +1,5 @@
 .splash {
-  width: clamp(16rem, 50%, 18rem);
+  width: clamp(16rem, 50%, 18.75rem);
   position: absolute;
   top: 50%;
   left: 50%;
@@ -21,7 +21,8 @@
 .splash__btns {
   a {
     display: block;
-    width: 100%;
-    margin-bottom: 1.5rem;
+    width: 90%;
+    margin-inline: auto;
+    margin-top: 1.5rem;
   }
 }

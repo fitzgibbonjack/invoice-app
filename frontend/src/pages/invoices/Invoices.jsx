@@ -7,10 +7,10 @@ export default function Invoices() {
   const currentUser = useUser();
 
   return (
-    <>
+    <main>
       <section className="invoices">
         {currentUser ? <Splash loggedIn /> : <Splash />}
       </section>
-    </>
+    </main>
   );
 }

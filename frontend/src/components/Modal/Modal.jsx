@@ -27,11 +27,11 @@ export default function Modal({ title, children }) {
 
   return ReactDOM.createPortal(
     <motion.div
+      className="modal"
+      onClick={closeModal}
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      className="modal"
-      onClick={closeModal}
     >
       <motion.section
         initial={{ y: "-100vh" }}
