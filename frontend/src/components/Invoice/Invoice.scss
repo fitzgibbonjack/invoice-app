@@ -4,6 +4,7 @@
   background-color: var(--clr-bg-secondary);
   margin-top: 1rem;
   border-radius: var(--br-400);
+  box-shadow: 0px 10px 10px -10px rgba(72, 84, 159, 0.1);
 
   display: grid;
   grid-template-columns: repeat(2, 1fr);

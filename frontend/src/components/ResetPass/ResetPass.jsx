@@ -36,6 +36,7 @@ export default function ResetPass() {
   return (
     <Modal title="Reset password" className="reset">
       {error && <Alert type="error" children={error} />}
+
       <form className="reset__form" onSubmit={handleSubmit}>
         <Input type="email" name="email" />
 

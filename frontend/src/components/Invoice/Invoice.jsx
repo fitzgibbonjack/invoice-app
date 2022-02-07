@@ -3,13 +3,14 @@ import Alert from "../Alert/Alert";
 import "./Invoice.scss";
 
 export default function Invoice({ data }) {
-  const formatDate = (input) => {
-    let date = new Date(input * 1000);
+  const formatDate = (dateInSeconds) => {
+    const dateInMs = dateInSeconds * 1000;
+    let date = new Date(dateInMs);
     return date.toLocaleDateString();
   };
 
-  const formatCurrency = (input) => {
-    return input.toLocaleString(undefined, {
+  const formatCurrency = (number) => {
+    return number.toLocaleString(undefined, {
       minimumFractionDigits: 2,
       style: "currency",
       currency: "GBP",

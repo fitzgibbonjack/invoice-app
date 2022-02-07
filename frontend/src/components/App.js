@@ -3,7 +3,7 @@ import { Routes, Route, useLocation } from "react-router-dom";
 import { UserProvider } from "../contexts/UserContext";
 import { AnimatePresence } from "framer-motion";
 
-import Header from "./Header/Header";
+import Nav from "./Nav/Nav";
 import Login from "./Login/Login";
 import Signup from "./Signup/Signup";
 import ResetPass from "./ResetPass/ResetPass";
@@ -16,7 +16,7 @@ export default function App() {
 
   return (
     <UserProvider>
-      <Header />
+      <Nav />
 
       <Routes location={background || location}>
         <Route path="/" exact element={<Main />} />

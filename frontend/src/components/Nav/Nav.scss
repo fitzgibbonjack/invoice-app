@@ -1,8 +1,12 @@
-.header {
+:root {
+  --logo-size: 5rem;
+}
+
+.nav {
+  position: relative;
   width: 100%;
   padding-right: 1.25rem;
   background-color: var(--clr-purple-500);
-  position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -11,14 +15,8 @@
   transition: background 0.5s ease-in-out;
 }
 
-.header__logo,
-.header__logo::before {
-  height: var(--width);
-  width: var(--width);
-}
-
-.header__logo {
-  --width: 5rem;
+// LOGO
+.nav__logo {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -36,17 +34,22 @@
     border-radius: var(--br-500) 0 0 0;
     z-index: -1;
   }
-
-  svg {
-    transform: scale(1.1);
-  }
 }
 
-.header__avatar {
+.nav__logo,
+.nav__logo::before {
+  height: var(--logo-size);
+  width: var(--logo-size);
+}
+
+// AVATAR
+.nav__avatar {
+  button {
+    margin-left: var(--gap);
+  }
   img {
     border-radius: 100%;
     width: 2rem;
-    margin-left: var(--gap);
   }
 
   &::before {
@@ -57,13 +60,13 @@
   }
 }
 
-.header__toggle {
+.nav__toggle {
   margin-left: auto;
 }
 
 // SIDE BAR STYLES
 @media screen and (min-width: 66em) {
-  .header {
+  .nav {
     border-radius: 0 var(--br-500) var(--br-500) 0;
     padding: 0 0 1.5rem 0;
     position: absolute;
@@ -73,15 +76,16 @@
     left: 0;
   }
 
-  .header__toggle {
+  .nav__toggle {
     margin-left: 0;
     margin-top: auto;
   }
 
-  .header__avatar img {
+  .nav__avatar button {
     margin: var(--gap) 0 0 0;
   }
-  .header__avatar::before {
+
+  .nav__avatar::before {
     inset: auto 0 auto 0;
     border-top: 1px solid var(--clr-purple-100);
   }

@@ -7,7 +7,8 @@ body.dark-mode {
   }
 
   label,
-  .invoice__due {
+  .invoice__due,
+  button {
     color: var(--clr-purple-000);
   }
 
@@ -30,11 +31,19 @@ body.dark-mode {
     background-color: rgba(65, 65, 65, 0.3);
   }
 
+  .invoice {
+    box-shadow: none;
+  }
+
   .invoice__id span {
     color: var(--clr-purple-200);
   }
 
   .alert p {
     color: revert;
+  }
+
+  .dropdown__item svg {
+    filter: var(--fltr-purple-000);
   }
 }

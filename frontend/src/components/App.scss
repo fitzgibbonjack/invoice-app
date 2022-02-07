@@ -30,6 +30,12 @@ body {
 
   --clr-orange-300: hsla(34, 100%, 50%, 0.06);
   --clr-orange-400: hsla(34, 100%, 50%, 1);
+
+  --fltr-purple-500: brightness(0) saturate(100%) invert(20%) sepia(8%)
+    saturate(2474%) hue-rotate(194deg) brightness(92%) contrast(85%);
+  --fltr-purple-000: brightness(0) saturate(100%) invert(84%) sepia(34%)
+    saturate(110%) hue-rotate(194deg) brightness(102%) contrast(96%);
+
   --br-300: 0.25rem;
   --br-400: 0.5rem;
   --br-500: 1.25rem;
