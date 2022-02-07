@@ -4,11 +4,10 @@ import { UserProvider } from "../contexts/UserContext";
 import { AnimatePresence } from "framer-motion";
 
 import Header from "./Header/Header";
-import Modal from "./Modal/Modal";
 import Login from "./Login/Login";
 import Signup from "./Signup/Signup";
 import ResetPass from "./ResetPass/ResetPass";
-import Invoices from "../pages/invoices/Invoices";
+import Main from "../pages/Main/Main";
 import "./App.scss";
 
 export default function App() {
@@ -17,42 +16,18 @@ export default function App() {
 
   return (
     <UserProvider>
-      <AnimatePresence>
-        <Header />
+      <Header />
 
-        <Routes location={background || location} key="1">
-          <Route path="/" exact element={<Invoices />} />
-        </Routes>
+      <Routes location={background || location}>
+        <Route path="/" exact element={<Main />} />
+      </Routes>
 
-        {/* MODALS */}
+      <AnimatePresence exitBeforeEnter>
         {background && (
-          <Routes location={location} key="2">
-            <Route
-              path="/login"
-              element={
-                <Modal title="Log in">
-                  <Login />
-                </Modal>
-              }
-            />
-
-            <Route
-              path="/signup"
-              element={
-                <Modal title="Sign up">
-                  <Signup />
-                </Modal>
-              }
-            />
-
-            <Route
-              path="/reset-password"
-              element={
-                <Modal title="Reset password">
-                  <ResetPass />
-                </Modal>
-              }
-            />
+          <Routes location={location}>
+            <Route path="/login" element={<Login />} />
+            <Route path="/signup" element={<Signup />} />
+            <Route path="/reset-password" element={<ResetPass />} />
           </Routes>
         )}
       </AnimatePresence>

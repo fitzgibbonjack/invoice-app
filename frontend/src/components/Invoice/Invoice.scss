@@ -1,0 +1,36 @@
+.invoice {
+  width: 100%;
+  padding: 1.5rem;
+  background-color: var(--clr-bg-secondary);
+  margin-top: 1rem;
+  border-radius: var(--br-400);
+
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(3, auto);
+  grid-template-areas:
+    "id client"
+    "due status"
+    "total status";
+}
+.invoice__id {
+  grid-area: id;
+}
+.invoice__due {
+  grid-area: due;
+  margin-bottom: 0.5rem;
+}
+.invoice__client {
+  grid-area: client;
+  margin-bottom: 2rem;
+}
+.invoice__total {
+  grid-area: total;
+}
+.invoice__status {
+  grid-area: status;
+}
+.invoice__client,
+.invoice__status {
+  justify-self: end;
+}

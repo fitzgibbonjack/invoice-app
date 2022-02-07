@@ -3,9 +3,10 @@ import { createUserWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../../firebase";
 import { useNavigate } from "react-router-dom";
 
+import Modal from "../Modal/Modal";
 import Input from "../Input/Input";
 import Button from "../Button/Button";
-import Error from "../Error/Error";
+import Alert from "../Alert/Alert";
 import "./Signup.scss";
 
 export default function Signup() {
@@ -39,8 +40,8 @@ export default function Signup() {
   }
 
   return (
-    <div className="signup">
-      {error && <Error message={error} />}
+    <Modal title="Sign up" className="signup">
+      {error && <Alert type="error" children={error} />}
 
       <form className="signup__form" onSubmit={handleSubmit}>
         <Input type="email" name="email" />
@@ -51,6 +52,6 @@ export default function Signup() {
           Sign up
         </Button>
       </form>
-    </div>
+    </Modal>
   );
 }

@@ -1,12 +1,13 @@
 body.dark-mode {
   --clr-bg: hsl(233, 30%, 11%);
+  --clr-bg-secondary: hsla(233, 31%, 17%, 1);
 
   .header {
     background-color: var(--clr-purple-600);
   }
 
   label,
-  p:not(.error__message) {
+  .invoice__due {
     color: var(--clr-purple-000);
   }
 
@@ -19,6 +20,7 @@ body.dark-mode {
   h2,
   h3,
   h4,
+  p,
   input,
   .modal__close {
     color: white;
@@ -26,5 +28,13 @@ body.dark-mode {
 
   .modal {
     background-color: rgba(65, 65, 65, 0.3);
+  }
+
+  .invoice__id span {
+    color: var(--clr-purple-200);
+  }
+
+  .alert p {
+    color: revert;
   }
 }

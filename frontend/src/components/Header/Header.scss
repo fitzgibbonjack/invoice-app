@@ -18,7 +18,7 @@
 }
 
 .header__logo {
-  --width: 4.5rem;
+  --width: 5rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -36,6 +36,10 @@
     border-radius: var(--br-500) 0 0 0;
     z-index: -1;
   }
+
+  svg {
+    transform: scale(1.1);
+  }
 }
 
 .header__avatar {
@@ -49,7 +53,7 @@
     content: "";
     border-left: 1px solid var(--clr-purple-100);
     position: absolute;
-    inset: 0 auto 0 auto;
+    inset: 0 auto;
   }
 }
 
@@ -67,12 +71,6 @@
     width: initial;
     height: 100%;
     left: 0;
-  }
-  .header__logo {
-    --width: 5rem;
-    svg {
-      transform: scale(1.2);
-    }
   }
 
   .header__toggle {

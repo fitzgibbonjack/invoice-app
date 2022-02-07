@@ -1,19 +1,18 @@
 import React, { useState } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { auth } from "../../firebase";
 import { sendPasswordResetEmail } from "firebase/auth";
-import { Link } from "react-router-dom";
 
+import Modal from "../Modal/Modal";
 import Button from "../Button/Button";
 import Input from "../Input/Input";
-import Error from "../Error/Error";
+import Alert from "../Alert/Alert";
 import "./ResetPass.scss";
 
 export default function ResetPass() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState();
   const navigate = useNavigate();
-  const location = useLocation();
 
   const closeModal = () => {
     navigate(-1);
@@ -35,16 +34,15 @@ export default function ResetPass() {
   }
 
   return (
-    <div className="reset">
-      {error && <Error message={error} />}
-
+    <Modal title="Reset password" className="reset">
+      {error && <Alert type="error" children={error} />}
       <form className="reset__form" onSubmit={handleSubmit}>
         <Input type="email" name="email" />
 
         <Button disabled={loading} type="submit" className="reset__submit">
-          Send reset email
+          Get reset link
         </Button>
       </form>
-    </div>
+    </Modal>
   );
 }

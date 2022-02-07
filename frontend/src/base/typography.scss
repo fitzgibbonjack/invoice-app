@@ -6,13 +6,13 @@ html * {
 
 body {
   color: var(--clr-purple-700);
-  font-size: 0.75rem;
 }
 
+body,
 button,
 label,
 input {
-  font-size: 0.75rem;
+  font-size: 0.8rem;
 }
 
 h1,
@@ -59,17 +59,42 @@ input {
   font-size: 1rem;
 }
 
-.error__message {
-  font-size: 0.8rem;
-  color: var(--clr-red-500);
-}
-
 .splash__text {
   color: var(--clr-purple-100);
-  font-size: 0.75rem;
   font-weight: 500;
 }
 
 .emphasis {
   font-weight: 700;
+}
+
+.invoice > * {
+  font-size: 0.8rem;
+}
+
+.invoice__total {
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.invoice__id span,
+.invoice__due,
+.invoice__client {
+  color: var(--clr-purple-100);
+}
+
+.alert:not(.alert--error) {
+  font-weight: 700;
+}
+.alert--error {
+  color: var(--clr-red-500);
+}
+.alert--success {
+  color: var(--clr-green-400);
+}
+.alert--pending {
+  color: var(--clr-orange-400);
+}
+.alert--secondary {
+  color: var(--clr-purple-500);
 }

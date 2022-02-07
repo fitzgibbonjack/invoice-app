@@ -3,9 +3,10 @@ import { signInWithEmailAndPassword } from "firebase/auth";
 import { useNavigate, Link, useLocation } from "react-router-dom";
 import { auth } from "../../firebase";
 
+import Modal from "../Modal/Modal";
 import Input from "../Input/Input";
 import Button from "../Button/Button";
-import Error from "../Error/Error";
+import Alert from "../Alert/Alert";
 import "./Login.scss";
 
 export default function Login() {
@@ -13,8 +14,6 @@ export default function Login() {
   const [error, setError] = useState();
   const navigate = useNavigate();
   let location = useLocation();
-
-  console.log(location);
 
   const closeModal = () => {
     navigate(-1);
@@ -40,8 +39,8 @@ export default function Login() {
   }
 
   return (
-    <div className="login">
-      {error && <Error message={error} />}
+    <Modal title="Log in" className="login">
+      {error && <Alert type="error" children={error} />}
 
       <form className="login__form" onSubmit={handleSubmit}>
         <Input type="email" name="email" />
@@ -58,6 +57,6 @@ export default function Login() {
       >
         Forgot password?
       </Link>
-    </div>
+    </Modal>
   );
 }

@@ -1,10 +1,10 @@
 import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { AnimatePresence, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import ReactDOM from "react-dom";
 import "./Modal.scss";
 
-export default function Modal({ title, children }) {
+export default function Modal({ title, className, children }) {
   const navigate = useNavigate();
 
   const closeModal = () => {
@@ -27,7 +27,7 @@ export default function Modal({ title, children }) {
 
   return ReactDOM.createPortal(
     <motion.div
-      className="modal"
+      className={`modal ${className}`}
       onClick={closeModal}
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}

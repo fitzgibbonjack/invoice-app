@@ -3,9 +3,14 @@ body {
   transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
 }
 
+.container {
+  margin-inline: 1.5rem;
+}
+
 // variables
 body {
   --clr-bg: hsl(240, 27%, 98%); // dark mode: hsl(233, 30%, 11%)
+  --clr-bg-secondary: white;
 
   --clr-purple-700: hsl(228, 29%, 7%);
   --clr-purple-600: hsl(233, 31%, 17%);
@@ -20,6 +25,11 @@ body {
   --clr-red-400: hsl(0, 80%, 63%);
   --clr-red-300: hsl(0, 100%, 80%);
 
+  --clr-green-300: hsla(160, 67%, 52%, 0.06);
+  --clr-green-400: hsla(160, 67%, 52%, 1);
+
+  --clr-orange-300: hsla(34, 100%, 50%, 0.06);
+  --clr-orange-400: hsla(34, 100%, 50%, 1);
   --br-300: 0.25rem;
   --br-400: 0.5rem;
   --br-500: 1.25rem;
