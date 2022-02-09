@@ -31,10 +31,10 @@ export default function Signup() {
         formData.get("email"),
         formData.get("password")
       );
-      setLoading(false);
       navigate("/");
     } catch (error) {
       setError(error.code);
+    } finally {
       setLoading(false);
     }
   }

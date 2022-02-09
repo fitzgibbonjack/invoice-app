@@ -22,7 +22,7 @@ export default function App() {
         <Route path="/" exact element={<Main />} />
       </Routes>
 
-      <AnimatePresence exitBeforeEnter>
+      <AnimatePresence>
         {background && (
           <Routes location={location}>
             <Route path="/login" element={<Login />} />

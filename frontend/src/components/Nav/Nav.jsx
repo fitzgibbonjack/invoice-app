@@ -8,9 +8,10 @@ import Logo from "../../assets/logo.svg";
 import ThemeToggle from "../ThemeToggle/ThemeToggle";
 import Avatar from "../../assets/avatar.ico";
 import Dropdown, { DropdownItem } from "../Dropdown/Dropdown";
+import "./Nav.scss";
+
 import { ReactComponent as SignoutIcon } from "../../assets/signout.svg";
 import { ReactComponent as UserIcon } from "../../assets/user.svg";
-import "./Nav.scss";
 
 export default function Nav() {
   const [open, setOpen] = useState(false);
@@ -45,7 +46,7 @@ export default function Nav() {
       <AnimatePresence>
         {open && currentUser && (
           <Dropdown>
-            <DropdownItem icon={<UserIcon />}>Update details</DropdownItem>
+            <DropdownItem icon={<UserIcon />}>Auth timeout</DropdownItem>
             <DropdownItem icon={<SignoutIcon />} onClick={handleSignOut}>
               Sign out
             </DropdownItem>

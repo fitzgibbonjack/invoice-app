@@ -36,12 +36,16 @@ export default function Modal({ title, className, children }) {
       <motion.section
         initial={{ y: "-100vh" }}
         animate={{ y: "0" }}
-        exit={{ y: "-100vh" }}
+        exit={{ y: "150vh" }}
         className="modal__content"
         onClick={(e) => e.stopPropagation()}
       >
         <header className="modal__header">
-          <button className="modal__close" type="button" onClick={closeModal}>
+          <button
+            className="modal__close txt--fs-500"
+            type="button"
+            onClick={closeModal}
+          >
             &#x2715;
           </button>
           <h3 className="modal__title">{title}</h3>

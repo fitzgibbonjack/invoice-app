@@ -1,5 +1,5 @@
 :root {
-  --logo-size: 5rem;
+  --logo-size: clamp(5rem, 10vw, 5.5rem);
 }
 
 .nav {

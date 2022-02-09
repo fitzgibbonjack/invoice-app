@@ -3,24 +3,31 @@
   border-radius: var(--br-300);
   text-align: center;
   height: fit-content;
-}
-.alert:not(.alert--error) {
-  width: 6.5rem;
-  padding: 0.75rem 0;
+  text-transform: capitalize;
+  width: initial;
+
+  &:not(.alert--error) {
+    min-width: 6.5rem;
+    padding: 0.75rem 0;
+  }
 }
 
 .alert--error {
   background-color: var(--clr-red-300);
+  color: var(--clr-red-500);
   border: 1px solid var(--clr-red-400);
   padding: 0.75rem 1rem;
   margin: 1rem 0;
 }
 .alert--success {
   background-color: var(--clr-green-300);
+  color: var(--clr-green-400);
 }
 .alert--pending {
   background-color: var(--clr-orange-300);
+  color: var(--clr-orange-400);
 }
 .alert--secondary {
   background-color: var(--clr-purple-500);
+  color: var(--clr-pruple-500);
 }

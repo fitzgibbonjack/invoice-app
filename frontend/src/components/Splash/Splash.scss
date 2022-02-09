@@ -6,7 +6,7 @@
   left: 50%;
   transform: translate(-50%, -50%);
 
-  @media screen and (min-width: 46em) {
+  @media screen and (min-width: 48em) {
     width: 17rem;
   }
 }
@@ -24,9 +24,13 @@
 
 .splash__btns {
   a {
-    display: block;
     width: 90%;
+    display: block;
     margin-inline: auto;
-    margin-top: 1.5rem;
+
+    &.button {
+      display: inline-flex;
+      margin-bottom: 1.5rem;
+    }
   }
 }

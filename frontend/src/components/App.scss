@@ -4,11 +4,25 @@ body {
 }
 
 .container {
-  margin-inline: 1.5rem;
+  margin-inline: auto;
+  padding-top: 2rem;
+  padding-inline: 1.5rem;
+  max-width: 51rem;
+
+  @media screen and (min-width: 48em) {
+    padding-top: 4rem;
+    padding-inline: 3rem;
+  }
+}
+
+.hide-for-mobile {
+  @media screen and (max-width: 47.9em) {
+    display: none;
+  }
 }
 
 // variables
-body {
+:root {
   --clr-bg: hsl(240, 27%, 98%); // dark mode: hsl(233, 30%, 11%)
   --clr-bg-secondary: white;
 

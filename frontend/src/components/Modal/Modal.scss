@@ -31,6 +31,7 @@
   padding-left: 0.5rem;
   inset: 0 0 auto auto;
   transition: transform 0.5s ease-in-out;
+  color: var(--clr-purple-500);
 
   &:hover {
     opacity: 0.5;

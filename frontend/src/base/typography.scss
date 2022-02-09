@@ -1,27 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Spartan:wght@400;500;600;700&display=swap");
 
-html * {
-  font-family: "Spartan" !important;
-}
-
-body {
+html {
   color: var(--clr-purple-700);
-}
 
-body,
-button,
-label,
-input {
-  font-size: 0.8rem;
-}
-
-h1,
-h2,
-h3,
-h4,
-.modal__close,
-.dropdown__item {
-  color: var(--clr-purple-500);
+  * {
+    font-family: "Spartan" !important;
+    font-size: 0.8rem;
+  }
 }
 
 h1,
@@ -29,76 +14,48 @@ h2,
 h3 {
   font-size: 1.25rem;
 }
-
 a,
 button,
-.button {
-  font-size: 0.8rem;
+input,
+.txt--fw-700 {
   font-weight: 700;
 }
-
+h1,
+h2,
+h3,
+h4 {
+  color: var(--clr-purple-500);
+}
 a {
   color: var(--clr-purple-400);
 }
-
-button,
-.button {
-  color: white;
-}
-
 label {
   font-weight: 500;
   color: var(--clr-purple-100);
 }
-
 input {
-  font-weight: 700;
   color: var(--clr-purple-700);
 }
-
-.modal__close {
-  font-size: 1rem;
+button,
+.button {
+  color: white;
 }
-
-.splash__text {
-  color: var(--clr-purple-100);
-  font-weight: 500;
-}
-
-.emphasis {
-  font-weight: 700;
-}
-
-.invoice > * {
+.txt--fs-400 {
   font-size: 0.8rem;
 }
-
-.invoice__total {
+.txt--fs-500 {
   font-size: 1rem;
-  font-weight: 700;
 }
-
-.invoice__id span,
-.invoice__due,
-.invoice__client {
+.txt--fw-500 {
+  font-weight: 500;
+}
+.txt--secondary {
   color: var(--clr-purple-100);
 }
 
-.alert {
-  text-transform: capitalize;
-}
-.alert:not(.alert--error) {
-  font-weight: 700;
-}
-.alert--error {
-  color: var(--clr-red-500);
-}
-.alert--success {
-  color: var(--clr-green-400);
-}
-.alert--pending {
-  color: var(--clr-orange-400);
-}
-.alert--secondary {
-  color: var(--clr-purple-500);
+// MEDIA QUERIES
+@media screen and (min-width: 48em) {
+  h1 {
+    font-size: 2rem;
+  }
 }

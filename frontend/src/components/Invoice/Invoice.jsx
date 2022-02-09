@@ -1,39 +1,36 @@
 import React from "react";
+import { formatDate, formatCurrency } from "../../helpers/format";
+
 import Alert from "../Alert/Alert";
+import IconArrowRight from "../../assets/icon-arrow-right.svg";
 import "./Invoice.scss";
 
 export default function Invoice({ data }) {
-  const formatDate = (dateInSeconds) => {
-    const dateInMs = dateInSeconds * 1000;
-    let date = new Date(dateInMs);
-    return date.toLocaleDateString();
-  };
-
-  const formatCurrency = (number) => {
-    return number.toLocaleString(undefined, {
-      minimumFractionDigits: 2,
-      style: "currency",
-      currency: "GBP",
-    });
-  };
-
   return (
     <article className="invoice">
-      <h2 className="invoice__id">
-        <span>#</span>
+      <h2 className="invoice__id txt--fs-400">
+        <span className="txt--secondary">#</span>
         {data.id}
       </h2>
 
-      <p className="invoice__due">
+      <p className="invoice__due txt--secondary">
         {"Due " + formatDate(data.paymentDue.seconds)}
       </p>
-      <p className="invoice__client">{data.clientName}</p>
-      <p className="invoice__total">{formatCurrency(data.total)}</p>
+      <p className="invoice__client txt--secondary">{data.clientName}</p>
+      <p className="invoice__total txt--fw-700 txt--fs-500">
+        {formatCurrency(data.total)}
+      </p>
 
       <Alert
         className="invoice__status"
         type={data.status}
         children={data.status}
+      />
+
+      <img
+        src={IconArrowRight}
+        className="hide-for-mobile invoice__toDetail"
+        aria-label="view invoice details"
       />
     </article>
   );

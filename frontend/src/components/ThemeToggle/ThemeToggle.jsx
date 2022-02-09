@@ -36,6 +36,7 @@ export default function ThemeToggle({ className }) {
       type="button"
       onClick={toggleDarkMode}
       data-state={darkMode}
+      aria-label="toggle dark theme"
     >
       <svg
         aria-hidden="true"
