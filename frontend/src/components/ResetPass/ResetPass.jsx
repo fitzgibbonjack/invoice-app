@@ -5,7 +5,7 @@ import { sendPasswordResetEmail } from "firebase/auth";
 
 import Modal from "../Modal/Modal";
 import Button from "../Button/Button";
-import Input from "../Input/Input";
+import { TextInput } from "../Input/Input";
 import Alert from "../Alert/Alert";
 import "./ResetPass.scss";
 
@@ -38,7 +38,7 @@ export default function ResetPass() {
       {error && <Alert type="error" children={error} />}
 
       <form className="reset__form" onSubmit={handleSubmit}>
-        <Input type="email" name="email" />
+        <TextInput type="email" name="email" />
 
         <Button disabled={loading} type="submit" className="reset__submit">
           Get reset link

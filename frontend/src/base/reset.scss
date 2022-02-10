@@ -49,6 +49,9 @@ label,
 input {
   display: block;
 }
+label {
+  text-transform: capitalize;
+}
 
 @media (prefers-reduced-motion: reduce) {
   *,

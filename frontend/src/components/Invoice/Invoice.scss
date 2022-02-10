@@ -14,8 +14,12 @@
     "due status"
     "total status";
 
+  font-weight: revert;
+  color: revert;
+
   &:hover {
     border: 1px solid var(--clr-purple-400);
+    text-decoration: none;
     cursor: pointer;
   }
   &:active {
@@ -60,7 +64,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 4.27%;
+    gap: 4.25%;
 
     & > * {
       margin: 0;

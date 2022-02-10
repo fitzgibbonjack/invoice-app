@@ -7,7 +7,7 @@ import "./Invoice.scss";
 
 export default function Invoice({ data }) {
   return (
-    <article className="invoice">
+    <a className="invoice">
       <h2 className="invoice__id txt--fs-400">
         <span className="txt--secondary">#</span>
         {data.id}
@@ -32,6 +32,6 @@ export default function Invoice({ data }) {
         className="hide-for-mobile invoice__toDetail"
         aria-label="view invoice details"
       />
-    </article>
+    </a>
   );
 }

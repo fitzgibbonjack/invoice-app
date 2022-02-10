@@ -15,3 +15,8 @@ export const formatCurrency = (number) => {
     currency: "GBP",
   });
 };
+
+export const formatRemaining = (invoices, filtered) => {
+  const remaining = filtered ? filtered.length : invoices.length;
+  return remaining === 1 ? "1 Invoice" : `${remaining} invoices`;
+};

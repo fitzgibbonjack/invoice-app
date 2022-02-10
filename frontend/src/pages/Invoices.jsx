@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { useUser } from "../contexts/UserContext";
 import { useInvoices } from "../contexts/InvoicesContext";
 import { motion } from "framer-motion";
+import { formatRemaining } from "../helpers/format";
 
 import Button from "../components/Button/Button";
 import Invoice from "../components/Invoice/Invoice";
@@ -10,9 +11,15 @@ import Filters from "../components/Filters/Filters";
 import { ReactComponent as PlusIcon } from "../assets/icon-plus.svg";
 import "./Invoices.scss";
 
-export default function Main() {
-  const invoices = useInvoices();
+export default function Invoices() {
   const currentUser = useUser();
+  const invoices = useInvoices();
+  const [filtered, setFiltered] = useState();
+
+  // clears filtered array if user log out
+  useEffect(() => {
+    !currentUser && setFiltered();
+  }, [currentUser]);
 
   if (!currentUser) return <Splash login />;
   return (
@@ -26,11 +33,13 @@ export default function Main() {
         <header className="invoices__header">
           <span>
             <h1 className="invoices__title">Invoices</h1>
-            <p className="invoices__remain">{`${invoices.length} Invoices`}</p>
+            <p className="invoices__remain">
+              {formatRemaining(invoices, filtered)}
+            </p>
           </span>
 
           <span>
-            <Filters />
+            <Filters setFiltered={setFiltered} />
             <Button className="invoices__add" icon={<PlusIcon />}>
               New
             </Button>
@@ -38,12 +47,17 @@ export default function Main() {
         </header>
 
         <ol>
-          {invoices.length > 0 &&
-            invoices.map((invoice) => (
-              <li key={invoice.id}>
-                <Invoice data={invoice} />
-              </li>
-            ))}
+          {filtered
+            ? filtered.map((invoice) => (
+                <li key={invoice.id}>
+                  <Invoice data={invoice} />
+                </li>
+              ))
+            : invoices.map((invoice) => (
+                <li key={invoice.id}>
+                  <Invoice data={invoice} />
+                </li>
+              ))}
         </ol>
       </motion.main>
 

@@ -4,7 +4,7 @@ import { useNavigate, Link, useLocation } from "react-router-dom";
 import { auth } from "../../firebase";
 
 import Modal from "../Modal/Modal";
-import Input from "../Input/Input";
+import { TextInput } from "../Input/Input";
 import Button from "../Button/Button";
 import Alert from "../Alert/Alert";
 import "./Login.scss";
@@ -43,8 +43,8 @@ export default function Login() {
       {error && <Alert type="error" children={error} />}
 
       <form className="login__form" onSubmit={handleSubmit}>
-        <Input type="email" name="email" />
-        <Input type="password" name="password" />
+        <TextInput type="email" name="email" />
+        <TextInput type="password" name="password" />
 
         <Button disabled={loading} type="submit" className="login__submit">
           Log in
