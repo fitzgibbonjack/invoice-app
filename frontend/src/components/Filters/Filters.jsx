@@ -1,7 +1,9 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { AnimatePresence } from "framer-motion";
-
+import { useLocation, useNavigate } from "react-router-dom";
+import { getFilterFromUrl } from "../../helpers/state";
 import { useInvoices } from "../../contexts/InvoicesContext";
+
 import Dropdown from "../Dropdown/Dropdown";
 import { RadioInput } from "../Input/Input";
 import "./Filters.scss";
@@ -9,22 +11,37 @@ import "./Filters.scss";
 export default function Filters({ setFiltered }) {
   const [open, setOpen] = useState(false);
   const [filter, setFilter] = useState();
+
   const invoices = useInvoices();
+  const navigate = useNavigate();
+  const location = useLocation();
 
   const applyFilter = (filter) => {
     const filtered = invoices.filter((invoice) => invoice.status === filter);
     setFiltered(filtered);
-    setFilter(filter);
+    navigate(`?filter=${filter}`);
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    e.target.reset();
+    navigate("/");
+    setFiltered();
     setOpen(false);
   };
 
-  const removeFilter = (e) => {
-    e.preventDefault();
-    e.target.reset();
-    setFiltered(null);
-    setFilter();
+  const handleClick = (e) => {
+    const filter = e.target.value;
+    applyFilter(filter);
     setOpen(false);
   };
+
+  // handle filtering upon url query param change
+  useEffect(() => {
+    const filter = getFilterFromUrl(location);
+    setFilter(filter);
+    filter ? applyFilter(filter) : setFiltered();
+  }, [location.search]);
 
   return (
     <>
@@ -38,26 +55,25 @@ export default function Filters({ setFiltered }) {
       <AnimatePresence>
         {open && (
           <Dropdown className="filters__dropdown">
-            <form
-              onChange={(e) => applyFilter(e.target.value)}
-              onSubmit={removeFilter}
-            >
+            <form onSubmit={handleSubmit}>
               <RadioInput
                 value="draft"
                 name="filter"
+                onClick={handleClick}
                 defaultChecked={filter === "draft"}
               />
               <RadioInput
                 value="pending"
                 name="filter"
+                onClick={handleClick}
                 defaultChecked={filter === "pending"}
               />
               <RadioInput
                 value="paid"
                 name="filter"
+                onClick={handleClick}
                 defaultChecked={filter === "paid"}
               />
-
               <button className=" filters__remove txt--secondary">
                 Remove filter
               </button>

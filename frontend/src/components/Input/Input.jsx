@@ -12,7 +12,7 @@ export function TextInput({ name, type }) {
   );
 }
 
-export function RadioInput({ value, name, defaultChecked }) {
+export function RadioInput({ value, name, defaultChecked, onClick }) {
   return (
     <label className="radio" htmlFor={value}>
       <input
@@ -21,6 +21,7 @@ export function RadioInput({ value, name, defaultChecked }) {
         name={name}
         value={value}
         defaultChecked={defaultChecked}
+        onClick={onClick}
       />
       {value}
     </label>

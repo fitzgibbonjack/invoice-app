@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useUser } from "../../contexts/UserContext";
 import { AnimatePresence } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 import { auth } from "../../firebase";
 import { signOut } from "firebase/auth";
 
@@ -16,8 +17,10 @@ import { ReactComponent as UserIcon } from "../../assets/user.svg";
 export default function Nav() {
   const [open, setOpen] = useState(false);
   const currentUser = useUser();
+  const navigate = useNavigate();
 
   const handleSignOut = () => {
+    navigate("/");
     signOut(auth);
     setOpen(false);
   };
