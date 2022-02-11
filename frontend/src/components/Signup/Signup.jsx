@@ -5,7 +5,6 @@ import { useNavigate } from "react-router-dom";
 
 import Modal from "../Modal/Modal";
 import { TextInput } from "../Input/Input";
-import Button from "../Button/Button";
 import Alert from "../Alert/Alert";
 import "./Signup.scss";
 
@@ -48,9 +47,13 @@ export default function Signup() {
         <TextInput type="password" name="password" />
         <TextInput type="password" name="passwordComfirmation" />
 
-        <Button disabled={loading} type="submit" className="signup__submit">
+        <button
+          disabled={loading}
+          type="submit"
+          className="signup__submit button button--1"
+        >
           Sign up
-        </Button>
+        </button>
       </form>
     </Modal>
   );

@@ -1,13 +1,12 @@
 .button {
   height: 3rem;
-  background-color: var(--clr-purple-400);
+  padding-inline: 1.5rem;
   border-radius: 2rem;
   transition: background 0.5s ease-in-out;
   gap: 0.5rem;
-  padding-inline: 0.5rem 1rem;
 
-  &:hover {
-    background-color: var(--clr-purple-300);
+  &.icon {
+    padding-inline: 0.5rem 1rem;
   }
 }
 
@@ -29,4 +28,35 @@
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+// VARIANTS
+.button--1 {
+  background-color: var(--clr-purple-400);
+  &:hover {
+    background-color: var(--clr-purple-300);
+  }
+}
+
+.button.button--2 {
+  background-color: hsla(231, 67%, 99%, 1);
+  color: var(--clr-purple-200);
+  &:hover {
+    background-color: var(--clr-purple-000);
+  }
+}
+
+.button--3 {
+  background-color: var(--clr-purple-500);
+  color: var(--clr-purple-100);
+  &:hover {
+    background-color: var(--clr-purple-700);
+  }
+}
+
+.button--4 {
+  background-color: var(--clr-red-400);
+  &:hover {
+    background-color: var(--clr-red-300);
+  }
 }

@@ -4,7 +4,6 @@ import { auth } from "../../firebase";
 import { sendPasswordResetEmail } from "firebase/auth";
 
 import Modal from "../Modal/Modal";
-import Button from "../Button/Button";
 import { TextInput } from "../Input/Input";
 import Alert from "../Alert/Alert";
 import "./ResetPass.scss";
@@ -40,9 +39,13 @@ export default function ResetPass() {
       <form className="reset__form" onSubmit={handleSubmit}>
         <TextInput type="email" name="email" />
 
-        <Button disabled={loading} type="submit" className="reset__submit">
+        <button
+          disabled={loading}
+          type="submit"
+          className="reset__submit button button--1"
+        >
           Get reset link
-        </Button>
+        </button>
       </form>
     </Modal>
   );

@@ -19,6 +19,7 @@ export default function InvoiceDetail() {
       initial={{ opacity: 0, x: "10rem" }}
       animate={{ opacity: 1, x: 0 }}
       exit={{ opacity: 0, x: "10rem" }}
+      layout
     >
       <button className="detail__goBack" onClick={() => navigate(-1)}>
         Go back
@@ -28,6 +29,12 @@ export default function InvoiceDetail() {
         <p className="txt--secondary">Status</p>
         <Alert type={invoice.status} children={invoice.status} />
       </header>
+
+      <motion.aside layout className="detail__controls">
+        <button className="button button--2">Edit</button>
+        <button className="button button--4">Delete</button>
+        <button className="button button--1">Mark as Paid</button>
+      </motion.aside>
     </motion.main>
   );
 }

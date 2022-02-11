@@ -39,4 +39,10 @@ body.dark-mode {
   .dropdown__item svg {
     filter: var(--fltr-purple-000);
   }
+  .button--2 {
+    background-color: hsla(233, 30%, 21%, 1);
+    &:hover {
+      background-color: hsla(0, 0%, 100%, 1);
+    }
+  }
 }

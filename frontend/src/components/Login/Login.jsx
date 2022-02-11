@@ -46,9 +46,13 @@ export default function Login() {
         <TextInput type="email" name="email" />
         <TextInput type="password" name="password" />
 
-        <Button disabled={loading} type="submit" className="login__submit">
+        <button
+          disabled={loading}
+          type="submit"
+          className="button button--1 login__submit"
+        >
           Log in
-        </Button>
+        </button>
       </form>
       <Link
         to="/reset-password"
