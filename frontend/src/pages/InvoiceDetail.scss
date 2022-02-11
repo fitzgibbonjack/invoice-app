@@ -1,0 +1,30 @@
+.detail__goBack {
+  color: var(--clr-purple-700);
+  transition: opacity 0.5s ease-in-out;
+  display: block;
+  margin-bottom: 2rem;
+
+  &::before {
+    content: url(../assets/icon-arrow-left.svg);
+    margin-right: 1rem;
+  }
+
+  &:hover {
+    text-decoration: none;
+    opacity: 0.75;
+  }
+}
+
+.detail__status {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-transform: capitalize;
+  padding: 1.5rem;
+}
+
+.detail__status {
+  background-color: var(--clr-bg-secondary);
+  border-radius: var(--br-400);
+  box-shadow: 0px 10px 10px -10px rgb(72 84 159 / 10%);
+}

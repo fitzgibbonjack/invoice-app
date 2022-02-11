@@ -14,9 +14,6 @@
     "due status"
     "total status";
 
-  font-weight: revert;
-  color: revert;
-
   &:hover {
     border: 1px solid var(--clr-purple-400);
     text-decoration: none;

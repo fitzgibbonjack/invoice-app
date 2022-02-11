@@ -17,9 +17,7 @@ export default function Invoices() {
   const [filtered, setFiltered] = useState();
 
   // clears filtered array if user log out
-  useEffect(() => {
-    !currentUser && setFiltered();
-  }, [currentUser]);
+  useEffect(() => !currentUser && setFiltered(), [currentUser]);
 
   if (!currentUser) return <Splash login />;
   return (
@@ -46,19 +44,19 @@ export default function Invoices() {
           </span>
         </header>
 
-        <ol>
+        <motion.ol layout>
           {filtered
             ? filtered.map((invoice) => (
                 <li key={invoice.id}>
-                  <Invoice data={invoice} />
+                  <Invoice invoice={invoice} />
                 </li>
               ))
             : invoices.map((invoice) => (
                 <li key={invoice.id}>
-                  <Invoice data={invoice} />
+                  <Invoice invoice={invoice} />
                 </li>
               ))}
-        </ol>
+        </motion.ol>
       </motion.main>
 
       {invoices.length === 0 && <Splash />}

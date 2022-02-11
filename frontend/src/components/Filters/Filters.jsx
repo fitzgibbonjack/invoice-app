@@ -22,7 +22,7 @@ export default function Filters({ setFiltered }) {
     e.preventDefault();
     e.target.reset();
     setFiltered(null);
-    setFilter(filter);
+    setFilter();
     setOpen(false);
   };
 
