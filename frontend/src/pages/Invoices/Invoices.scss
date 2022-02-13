@@ -1,4 +1,4 @@
-.invoices__header {
+.invoices__controls {
   margin-bottom: 2rem;
   display: flex;
   align-items: center;
@@ -12,7 +12,7 @@
   color: var(--clr-purple-100);
 }
 
-.invoices__header span:nth-of-type(2) {
+.invoices__controls span:nth-of-type(2) {
   display: flex;
   gap: 1.125rem;
   margin-left: auto;

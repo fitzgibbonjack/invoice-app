@@ -45,4 +45,13 @@ body.dark-mode {
       background-color: hsla(0, 0%, 100%, 1);
     }
   }
+  .invoiceDetail p {
+    color: var(--clr-purple-000);
+  }
+  .items {
+    background-color: var(--clr-purple-600);
+  }
+  .button--2 {
+    background-color: var(--clr-purple-700);
+  }
 }

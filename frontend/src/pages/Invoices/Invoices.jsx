@@ -1,17 +1,17 @@
 import React, { useState, useEffect } from "react";
-import { useUser } from "../contexts/UserContext";
-import { useInvoices } from "../contexts/InvoicesContext";
+import { useUser } from "../../contexts/UserContext";
+import { useInvoices } from "../../contexts/InvoicesContext";
 import { motion } from "framer-motion";
-import { formatRemaining } from "../helpers/format";
+import { formatRemaining } from "../../helpers/format";
 
-import Button from "../components/Button/Button";
-import Invoice from "../components/Invoice/Invoice";
-import Splash from "../components/Splash/Splash";
-import Filters from "../components/Filters/Filters";
-import { ReactComponent as PlusIcon } from "../assets/icon-plus.svg";
+import Button from "../../components/Button/Button";
+import Invoice from "../../components/Invoice/Invoice";
+import Splash from "../../components/Splash/Splash";
+import Filters from "../../components/Filters/Filters";
+import { ReactComponent as PlusIcon } from "../../assets/icon-plus.svg";
 import "./Invoices.scss";
 
-export default function Invoices() {
+export default function InvoicesPage() {
   const currentUser = useUser();
   const invoices = useInvoices();
   const [filtered, setFiltered] = useState();
@@ -28,7 +28,7 @@ export default function Invoices() {
         animate={{ opacity: 1, x: 0 }}
         exit={{ opacity: 0, x: "-10rem" }}
       >
-        <header className="invoices__header">
+        <aside className="invoices__controls">
           <span>
             <h1 className="invoices__title">Invoices</h1>
             <p className="invoices__remain">
@@ -42,21 +42,23 @@ export default function Invoices() {
               New
             </Button>
           </span>
-        </header>
+        </aside>
 
-        <motion.ol layout>
-          {filtered
-            ? filtered.map((invoice) => (
-                <li key={invoice.id}>
-                  <Invoice invoice={invoice} />
-                </li>
-              ))
-            : invoices.map((invoice) => (
-                <li key={invoice.id}>
-                  <Invoice invoice={invoice} />
-                </li>
-              ))}
-        </motion.ol>
+        <section>
+          <ol>
+            {filtered
+              ? filtered.map((invoice) => (
+                  <li key={invoice.id}>
+                    <Invoice invoice={invoice} />
+                  </li>
+                ))
+              : invoices.map((invoice) => (
+                  <li key={invoice.id}>
+                    <Invoice invoice={invoice} />
+                  </li>
+                ))}
+          </ol>
+        </section>
       </motion.main>
 
       {invoices.length === 0 && <Splash />}

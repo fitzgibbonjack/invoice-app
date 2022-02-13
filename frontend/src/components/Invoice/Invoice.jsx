@@ -18,18 +18,10 @@ export default function Invoice({ invoice }) {
       }}
     >
       <motion.article className="invoice" layout>
-        <h2 className="invoice__id txt--fs-400">
-          <span className="txt--secondary">#</span>
-          {invoice.id}
-        </h2>
-
-        <p className="invoice__due txt--secondary">
-          {"Due " + formatDate(invoice.paymentDue.seconds)}
-        </p>
-        <p className="invoice__client txt--secondary">{invoice.clientName}</p>
-        <p className="invoice__total txt--fw-700 txt--fs-500">
-          {formatCurrency(invoice.total)}
-        </p>
+        <Id data={invoice.id} />
+        <DueDate data={invoice.paymentDue.seconds} />
+        <ClientName data={invoice.clientName} />
+        <Total data={invoice.total} />
 
         <Alert
           className="invoice__status"
@@ -40,9 +32,36 @@ export default function Invoice({ invoice }) {
         <img
           src={IconArrowRight}
           className="hide-for-mobile invoice__toDetail"
-          aria-label="view invoice details"
+          aria-hidden="true"
         />
       </motion.article>
     </Link>
+  );
+}
+
+function Id({ data }) {
+  return (
+    <h2 className="invoice__id txt--fs-400">
+      <span className="txt--secondary">#</span>
+      {data}
+    </h2>
+  );
+}
+
+function DueDate({ data }) {
+  return (
+    <p className="invoice__due txt--secondary">{"Due " + formatDate(data)}</p>
+  );
+}
+
+function ClientName({ data }) {
+  return <p className="invoice__client txt--secondary">{data}</p>;
+}
+
+function Total({ data }) {
+  return (
+    <p className="invoice__total txt--fw-700 txt--fs-500">
+      {formatCurrency(data)}
+    </p>
   );
 }

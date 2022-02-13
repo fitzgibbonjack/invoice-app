@@ -8,8 +8,8 @@ import Nav from "./Nav/Nav";
 import Login from "./Login/Login";
 import Signup from "./Signup/Signup";
 import ResetPass from "./ResetPass/ResetPass";
-import Invoices from "../pages/Invoices";
-import InvoiceDetail from "../pages/InvoiceDetail";
+import InvoicesPage from "../pages/Invoices/Invoices";
+import InvoicePage from "../pages/Invoice/Invoice";
 import "./App.scss";
 
 export default function App() {
@@ -23,8 +23,8 @@ export default function App() {
 
         <InvoiceProvider>
           <Routes location={background || location}>
-            <Route path="/" exact element={<Invoices />} />
-            <Route path="/:invoiceId" exact element={<InvoiceDetail />} />
+            <Route path="/" exact element={<InvoicesPage />} />
+            <Route path="/:invoiceId" exact element={<InvoicePage />} />
           </Routes>
 
           <AnimatePresence>

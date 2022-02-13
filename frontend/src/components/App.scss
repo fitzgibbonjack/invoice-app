@@ -7,7 +7,7 @@ body {
   margin-inline: auto;
   padding-top: 2rem;
   padding-inline: 1.5rem;
-  max-width: 51rem;
+  max-width: 52rem;
 
   @media screen and (min-width: 48em) {
     padding-top: 4rem;
@@ -25,6 +25,7 @@ body {
 :root {
   --clr-bg: hsl(240, 27%, 98%); // dark mode: hsl(233, 30%, 11%)
   --clr-bg-secondary: white;
+  --clr-shadow: hsla(231, 37%, 45%, 0.1);
 
   --clr-purple-700: hsl(228, 29%, 7%);
   --clr-purple-600: hsl(233, 31%, 17%);
