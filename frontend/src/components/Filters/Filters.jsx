@@ -48,6 +48,7 @@ export default function Filters({ setFiltered }) {
       <button
         className={`filters__toggle ${open}`}
         onClick={() => setOpen(!open)}
+        disabled={invoices.length === 0}
       >
         Filter
       </button>
