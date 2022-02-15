@@ -39,10 +39,10 @@
 }
 
 .button.button--2 {
-  background-color: hsla(231, 67%, 99%, 1);
+  background-color: var(--clr-purple-000);
   color: var(--clr-purple-200);
   &:hover {
-    background-color: var(--clr-purple-000);
+    background-color: var(--clr-purple-100);
   }
 }
 

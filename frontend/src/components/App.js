@@ -10,12 +10,12 @@ import Signup from "./Signup/Signup";
 import ResetPass from "./ResetPass/ResetPass";
 import InvoicesPage from "../pages/Invoices/Invoices";
 import InvoicePage from "../pages/Invoice/Invoice";
+import Delete from "./Delete/Delete";
 import "./App.scss";
 
 export default function App() {
   const location = useLocation();
   const background = location.state && location.state.background;
-
   return (
     <>
       <UserProvider>
@@ -33,6 +33,7 @@ export default function App() {
                 <Route path="/login" element={<Login />} />
                 <Route path="/signup" element={<Signup />} />
                 <Route path="/reset-password" element={<ResetPass />} />
+                <Route path="/:invoiceId/delete" element={<Delete />} />
               </Routes>
             )}
           </AnimatePresence>

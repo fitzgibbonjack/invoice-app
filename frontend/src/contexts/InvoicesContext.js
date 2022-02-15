@@ -1,5 +1,5 @@
 import React, { useContext, useState, useEffect } from "react";
-import { collection, getDocs } from "firebase/firestore";
+import { collection, onSnapshot, getDocs } from "firebase/firestore";
 import { db, auth } from "../firebase";
 import { onAuthStateChanged } from "firebase/auth";
 import { snapshotToObjectsArray } from "../helpers/firestore";
@@ -17,13 +17,13 @@ export function InvoiceProvider({ children }) {
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
       setLoading(true);
-      if (user) {
+      if (user != null) {
         const collectionRef = collection(db, user.uid);
-        getDocs(collectionRef)
-          .then((snapshot) => snapshotToObjectsArray(snapshot))
-          .then((data) => setInvoices(data))
-          .then(() => setLoading(false))
-          .catch((error) => console.log(error));
+        onSnapshot(collectionRef, (docs) => {
+          const data = snapshotToObjectsArray(docs);
+          setInvoices(data);
+          setLoading(false);
+        });
       } else {
         setLoading(false);
         setInvoices([]);

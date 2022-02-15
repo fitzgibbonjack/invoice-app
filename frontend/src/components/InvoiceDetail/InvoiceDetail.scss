@@ -79,3 +79,44 @@
     font-weight: 700;
   }
 }
+
+// MEDIA QUERY
+@media screen and (min-width: 48em) {
+  .invoiceDetail,
+  .item,
+  .total {
+    padding: 2rem;
+  }
+
+  .invoiceDetail {
+    h1,
+    h2 {
+      font-size: 0.9rem;
+    }
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(5, auto);
+  }
+  .Address:not(.Address ~ .Address) {
+    grid-area: 1 / 3 / 2 / 4;
+    text-align: right;
+  }
+  .Address ~ .Address {
+    grid-area: 2 / 2 / 4 / 3;
+  }
+  .Date {
+    grid-area: 2 / 1 / 3 / 2;
+  }
+  .Date ~ .Date {
+    grid-area: 3 / 1 / 4 / 2;
+  }
+  .clientEmail {
+    grid-area: 2 / 3 / 4 / 4;
+  }
+  .items {
+    grid-area: 4 / 1 / 5 / 4;
+    margin-top: 1rem;
+  }
+  .total {
+    grid-area: 5 / 1 / 6 / 4;
+  }
+}

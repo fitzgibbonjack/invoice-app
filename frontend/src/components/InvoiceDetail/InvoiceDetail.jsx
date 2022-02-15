@@ -37,7 +37,7 @@ function Description({ data }) {
 
 function Date({ data, title }) {
   return (
-    <div className="date">
+    <div className="Date">
       <h2>{title}</h2>
       <p>{formatDate(data.seconds)}</p>
     </div>

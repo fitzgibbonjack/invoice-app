@@ -5,7 +5,6 @@ import { auth } from "../../firebase";
 
 import Modal from "../Modal/Modal";
 import { TextInput } from "../Input/Input";
-import Button from "../Button/Button";
 import Alert from "../Alert/Alert";
 import "./Login.scss";
 
