@@ -23,6 +23,7 @@ export default function InvoiceDetail({ data }) {
   );
 }
 
+// COMPONENTS
 function Description({ data }) {
   return (
     <div className="description">

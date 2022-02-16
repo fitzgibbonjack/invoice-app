@@ -1,18 +1,18 @@
 import React from "react";
-import { useNavigate, useParams, useLocation, Link } from "react-router-dom";
+import { useParams, useLocation, Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { useInvoices } from "../../contexts/InvoicesContext";
 import { db } from "../../firebase";
 import { doc, updateDoc } from "firebase/firestore";
 import { useUser } from "../../contexts/UserContext";
 
+import GoBack from "../../components/GoBack/GoBack";
 import InvoiceDetail from "../../components/InvoiceDetail/InvoiceDetail";
 import Alert from "../../components/Alert/Alert";
 import "./Invoice.scss";
 
 export default function InvoicePage() {
   const invoices = useInvoices();
-  const navigate = useNavigate();
   const { invoiceId } = useParams();
 
   const invoice = invoices.find((invoice) => invoice.id === invoiceId);
@@ -25,9 +25,7 @@ export default function InvoicePage() {
         animate={{ opacity: 1, x: 0 }}
         exit={{ opacity: 0, x: "10rem" }}
       >
-        <button className="detail__back" onClick={() => navigate(-1)}>
-          Go back
-        </button>
+        <GoBack />
 
         <aside className="detail__aside">
           <Status data={invoice.status} />
@@ -40,6 +38,7 @@ export default function InvoicePage() {
   );
 }
 
+// COMPONENTS
 function Status({ data }) {
   return (
     <span className="detail__status">
