@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import { useUser } from "../../contexts/UserContext";
 import { useInvoices } from "../../contexts/InvoicesContext";
 import { motion } from "framer-motion";
@@ -12,6 +13,7 @@ import { ReactComponent as PlusIcon } from "../../assets/icon-plus.svg";
 import "./Invoices.scss";
 
 export default function InvoicesPage() {
+  const navigate = useNavigate();
   const currentUser = useUser();
   const invoices = useInvoices();
   const [filtered, setFiltered] = useState();
@@ -38,7 +40,11 @@ export default function InvoicesPage() {
 
           <span>
             <Filters setFiltered={setFiltered} />
-            <Button className="invoices__add" icon={<PlusIcon />}>
+            <Button
+              className="invoices__add"
+              icon={<PlusIcon />}
+              onClick={() => navigate("/new")}
+            >
               New
             </Button>
           </span>
