@@ -52,6 +52,9 @@ input {
 label {
   text-transform: capitalize;
 }
+fieldset {
+  border: none;
+}
 
 @media (prefers-reduced-motion: reduce) {
   *,

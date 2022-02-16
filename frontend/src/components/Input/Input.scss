@@ -1,18 +1,18 @@
-input[type="text"],
-input[type="email"],
-input[type="password"] {
+// TEXT INPUT
+input,
+select {
   padding: 1rem 1.25rem;
   border: 1px solid var(--clr-purple-000);
   border-radius: var(--br-300);
   width: 100%;
 
+  & {
+    margin-top: 0.625rem;
+  }
+
   &:focus {
     outline: 1px solid var(--clr-purple-400);
   }
-}
-
-.text:not(:last-child) {
-  margin-bottom: 0.625rem;
 }
 
 // RADIO INPUT
@@ -36,7 +36,7 @@ input[type="radio"] {
   }
 }
 
-.radio {
+.input--radio {
   display: flex;
   align-items: center;
   border-radius: var(--br-400);
@@ -47,11 +47,42 @@ input[type="radio"] {
   font-size: 0.75rem;
 }
 
-.radio:hover {
+.input--radio:hover {
   background-color: var(--clr-bg);
 
   &,
   input[type="radio"]:hover {
     cursor: pointer;
   }
+}
+
+// ADDRESS INPUT
+.input--address {
+  display: grid;
+  gap: 1.25rem;
+  grid-template-columns: repeat(2, 1fr);
+
+  & > * {
+    grid-column: 1 / 3;
+  }
+
+  label[for="city"],
+  label[for="postcode"] {
+    grid-column: revert;
+  }
+}
+
+// DATE INPUT
+input[type="date"] {
+  &::-webkit-calendar-picker-indicator {
+    filter: var(--fltr-purple-200);
+  }
+}
+
+// SELECT INPUT
+select {
+  appearance: none;
+  background-image: url("../../assets/icon-arrow-down.svg");
+  background-repeat: no-repeat;
+  background-position: right 1.5rem center;
 }
