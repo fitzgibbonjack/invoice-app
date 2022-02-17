@@ -12,6 +12,7 @@ import ResetPass from "./ResetPass/ResetPass";
 import InvoicesPage from "../pages/Invoices/Invoices";
 import InvoicePage from "../pages/Invoice/Invoice";
 import NewInvoice from "../pages/NewInvoice/NewInvoice";
+import ProtectedRoute from "./ProtectedRoute/ProtectedRoute";
 import "./App.scss";
 
 export default function App() {
@@ -25,8 +26,16 @@ export default function App() {
         <InvoiceProvider>
           <Routes location={background || location}>
             <Route path="/" exact element={<InvoicesPage />} />
-            <Route path="/new" exact element={<NewInvoice />} />
-            <Route path="/:invoiceId" exact element={<InvoicePage />} />
+            <Route
+              path="/new"
+              exact
+              element={<ProtectedRoute children={<NewInvoice />} />}
+            />
+            <Route
+              path="/:invoiceId"
+              exact
+              element={<ProtectedRoute children={<InvoicePage />} />}
+            />
           </Routes>
 
           <AnimatePresence>
