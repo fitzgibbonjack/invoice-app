@@ -3,8 +3,8 @@
 }
 
 .nav {
-  position: relative;
-  width: 100%;
+  position: fixed;
+  inset: 0 0 auto 0;
   padding-right: 1.25rem;
   background-color: var(--clr-purple-500);
   display: flex;
@@ -66,6 +66,12 @@
 }
 
 // SIDE BAR STYLES
+@media screen and (min-width: 48em) {
+  .nav {
+    position: relative;
+    inset: unset;
+  }
+}
 @media screen and (min-width: 66em) {
   .nav {
     border-radius: 0 var(--br-500) var(--br-500) 0;

@@ -3,7 +3,8 @@ body.dark-mode {
   --clr-bg-secondary: hsla(233, 30%, 21%, 1);
 
   nav,
-  input {
+  input,
+  select {
     background-color: var(--clr-purple-600);
   }
 
@@ -14,7 +15,8 @@ body.dark-mode {
     color: var(--clr-purple-000);
   }
 
-  input {
+  input,
+  select {
     border-color: var(--clr-purple-500);
   }
 
@@ -24,6 +26,7 @@ body.dark-mode {
   h4,
   p:not(.alert),
   input,
+  select,
   .modal__close {
     color: white;
   }
@@ -40,7 +43,7 @@ body.dark-mode {
     filter: var(--fltr-purple-000);
   }
   .button--2 {
-    background-color: hsla(233, 30%, 21%, 1);
+    background-color: var(--clr-purple-700);
     &:hover {
       background-color: hsla(0, 0%, 100%, 1);
     }
@@ -50,8 +53,5 @@ body.dark-mode {
   }
   .items {
     background-color: var(--clr-purple-600);
-  }
-  .button--2 {
-    background-color: var(--clr-purple-700);
   }
 }

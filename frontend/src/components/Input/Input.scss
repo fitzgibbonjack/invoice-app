@@ -13,6 +13,10 @@ select {
   &:focus {
     outline: 1px solid var(--clr-purple-400);
   }
+
+  &:enabled {
+    background-color: white;
+  }
 }
 
 // RADIO INPUT
@@ -44,7 +48,7 @@ input[type="radio"] {
   padding: 0.5rem;
   gap: 0.8rem;
   font-weight: 700;
-  font-size: 0.75rem;
+  font-size: inherit;
 }
 
 .input--radio:hover {

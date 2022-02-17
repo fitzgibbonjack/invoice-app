@@ -53,8 +53,6 @@ export default function New() {
             <legend className="form__legend">Item List</legend>
 
             <Item />
-            <Item />
-            <Item />
 
             <button type="button" className="button button--2 items__add">
               Add New Item
@@ -83,7 +81,12 @@ function Item() {
         Total
         <span className="input--text">400.00</span>
       </label>
-      <button className="item__delete" onClick={removeItem} type="button">
+      <button
+        className="item__delete"
+        onClick={removeItem}
+        type="button"
+        aria-label="remove item"
+      >
         <DeleteIcon aria-hidden="true" />
       </button>
     </motion.div>
