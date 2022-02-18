@@ -19,9 +19,16 @@ export default function NewInvoiceControls({ itemCount }) {
       form.reportValidity();
       return;
     }
+    // calculate payment due date
+    const paymentDue =
+      Date.now() + data.get("paymentTerms") * 24 * 60 * 60 * 1000;
+
+    const calculateTotal = (items) => {};
 
     // add invoice to firestore
     setDoc(doc(db, user.uid, generateId()), {
+      createdAt: Timestamp.fromDate(new Date()),
+      paymentDue: Timestamp.fromDate(new Date(paymentDue)),
       description: data.get("projectDescription"),
       clientName: data.get("clientName"),
       clientEmail: data.get("clientEmail"),
@@ -39,6 +46,7 @@ export default function NewInvoiceControls({ itemCount }) {
         country: data.get("country1"),
       },
       items: [...items],
+      total: calculateTotal(),
     })
       .then(() => console.log("document created"))
       .catch((error) => console.log(error));
