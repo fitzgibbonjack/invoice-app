@@ -17,7 +17,7 @@ export default function InvoiceControls({ invoice }) {
   };
 
   return (
-    <span className="detail__controls">
+    <span className="card detail__controls">
       <button className="button button--2">Edit</button>
 
       <Link

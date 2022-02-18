@@ -17,7 +17,7 @@ export default function Invoice({ invoice }) {
         textDecoration: "none",
       }}
     >
-      <motion.article className="invoice" layout>
+      <motion.article className="invoice card" layout>
         <Id data={invoice.id} />
         <DueDate data={invoice.paymentDue.seconds} />
         <ClientName data={invoice.clientName} />

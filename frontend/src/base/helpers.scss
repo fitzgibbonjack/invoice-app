@@ -18,6 +18,12 @@
   }
 }
 
+.hide-for-desktop {
+  @media screen and (min-width: 48em) {
+    display: none;
+  }
+}
+
 .bg--secondary {
   background-color: var(--clr-bg-secondary);
 }

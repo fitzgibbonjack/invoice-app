@@ -76,7 +76,7 @@
   .nav {
     border-radius: 0 var(--br-500) var(--br-500) 0;
     padding: 0 0 1.5rem 0;
-    position: absolute;
+    position: fixed;
     flex-direction: column;
     width: initial;
     height: 100%;

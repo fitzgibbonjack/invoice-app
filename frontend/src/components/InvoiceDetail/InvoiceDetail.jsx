@@ -4,19 +4,19 @@ import "./InvoiceDetail.scss";
 
 export default function InvoiceDetail({ data }) {
   return (
-    <section className="invoiceDetail">
+    <section className="invoiceDetail card">
       <Description data={data} />
       <Address data={data.senderAddress} />
       <Date title="Invoice date" data={data.createdAt} />
       <Date title="Payment due" data={data.paymentDue} />
-
       <Address
         data={data.clientAddress}
         title="Bill to"
         name={data.clientName}
       />
-
       <ClientEmail data={data.clientEmail} />
+
+      <TableTitles />
       <Items data={data.items} />
       <Total data={data.total} />
     </section>
@@ -67,15 +67,33 @@ function ClientEmail({ data }) {
   );
 }
 
-function Items({ data }) {
-  let counter = 1;
+function TableTitles() {
   return (
-    <ul className="detail__items">
+    <div aria-hidden="true" className="detail__tableTitles hide-for-mobile">
+      <p>Item Name</p>
+      <p>QTY</p>
+      <p>Price</p>
+      <p>Total</p>
+    </div>
+  );
+}
+
+function Items({ data }) {
+  let counter = 0;
+  return (
+    <ul className="detail__items" aria-label="items">
       {data.map((item) => (
         <li className="detail__item" key={counter++}>
           <h2>{item.name}</h2>
-          <p>{`${item.quantity} x ${formatCurrency(item.price)}`}</p>
-          <p>{formatCurrency(item.total)}</p>
+          <p className="hide-for-mobile" aria-label="item quantity">
+            {item.quantity}
+          </p>
+          <p aria-label="item price">
+            <span className="hide-for-desktop">{item.quantity}</span>
+            <span className="hide-for-desktop">{" x "}</span>
+            <span>{formatCurrency(item.price)}</span>
+          </p>
+          <p aria-label="item total price">{formatCurrency(item.total)}</p>
         </li>
       ))}
     </ul>
