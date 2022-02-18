@@ -27,11 +27,6 @@ export default function App() {
           <Routes location={background || location}>
             <Route path="/" exact element={<InvoicesPage />} />
             <Route
-              path="/new"
-              exact
-              element={<ProtectedRoute children={<NewPage />} />}
-            />
-            <Route
               path="/:invoiceId"
               exact
               element={<ProtectedRoute children={<InvoicePage />} />}
@@ -45,6 +40,7 @@ export default function App() {
                 <Route path="/signup" element={<Signup />} />
                 <Route path="/reset-password" element={<ResetPass />} />
                 <Route path="/:invoiceId/delete" element={<Delete />} />
+                <Route path="/new" exact element={<NewPage />} />
               </Routes>
             )}
           </AnimatePresence>

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { useUser } from "../../contexts/UserContext";
 import { useInvoices } from "../../contexts/InvoicesContext";
 import { motion } from "framer-motion";
@@ -14,6 +14,8 @@ import "./Invoices.scss";
 
 export default function InvoicesPage() {
   const navigate = useNavigate();
+  const location = useLocation();
+
   const currentUser = useUser();
   const invoices = useInvoices();
   const [filtered, setFiltered] = useState();
@@ -26,6 +28,7 @@ export default function InvoicesPage() {
     <>
       <motion.main
         className="container"
+        style={{ paddingBottom: "1.5rem" }}
         initial={{ opacity: 0, x: "-10rem" }}
         animate={{ opacity: 1, x: 0 }}
         exit={{ opacity: 0, x: "-10rem" }}
@@ -43,7 +46,9 @@ export default function InvoicesPage() {
             <Button
               className="invoices__add"
               icon={<PlusIcon />}
-              onClick={() => navigate("/new")}
+              onClick={() =>
+                navigate("/new", { state: { background: location } })
+              }
             >
               New
             </Button>

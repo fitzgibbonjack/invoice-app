@@ -27,13 +27,11 @@ export default function Filters({ setFiltered }) {
     e.target.reset();
     navigate("/");
     setFiltered();
-    setOpen(false);
   };
 
   const handleClick = (e) => {
     const filter = e.target.value;
     applyFilter(filter);
-    setOpen(false);
   };
 
   // handle filtering upon url query param change

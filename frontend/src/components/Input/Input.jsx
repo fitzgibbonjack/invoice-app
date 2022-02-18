@@ -1,13 +1,13 @@
 import React from "react";
 import "./Input.scss";
 
-export function TextInput({ name, type = "text" }) {
+export function TextInput({ name, type = "text", onChange }) {
   let label = name.replace(/([a-z])([A-Z])/g, "$1 $2");
   label = label.replace(/[0-9]/g, "");
   return (
     <label htmlFor={name} className="input--text">
       {label}
-      <input type={type} id={name} name={name} required />
+      <input type={type} id={name} name={name} onChange={onChange} required />
     </label>
   );
 }
