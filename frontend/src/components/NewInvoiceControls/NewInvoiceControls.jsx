@@ -1,10 +1,13 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import { doc, setDoc, Timestamp } from "firebase/firestore";
+import { doc, setDoc } from "firebase/firestore";
 import { useUser } from "../../contexts/UserContext";
 import { db } from "../../firebase";
-import { generateId } from "../../helpers/generateId";
 import "./NewInvoiceControls.scss";
+
+//helpers
+import { generateId } from "../../helpers/generateId";
+import { formDataToObject } from "../../helpers/formDataToObject";
 
 export default function NewInvoiceControls({ itemCount }) {
   const navigate = useNavigate();
@@ -15,6 +18,7 @@ export default function NewInvoiceControls({ itemCount }) {
     const form = e.currentTarget.form;
     const data = new FormData(form);
 
+    // validation
     if (!form.checkValidity()) {
       form.reportValidity();
       return;
@@ -32,43 +36,9 @@ export default function NewInvoiceControls({ itemCount }) {
       });
     }
 
-    // calculate payment due date
-    const paymentDue =
-      Date.now() + data.get("paymentTerms") * 24 * 60 * 60 * 1000;
-
-    // calculate total
-    const calculateTotal = () => {
-      console.log(items);
-      let total = 0;
-      items.forEach((item) => {
-        total += item.total;
-      });
-      return total;
-    };
-
     // add invoice to firestore
-    setDoc(doc(db, user.uid, generateId()), {
-      createdAt: Timestamp.fromDate(new Date()),
-      paymentDue: Timestamp.fromDate(new Date(paymentDue)),
-      description: data.get("projectDescription"),
-      clientName: data.get("clientName"),
-      clientEmail: data.get("clientEmail"),
-      status: status,
-      senderAddress: {
-        street: data.get("streetAddress0"),
-        city: data.get("city0"),
-        postcode: data.get("postcode0"),
-        country: data.get("country0"),
-      },
-      clientAddress: {
-        street: data.get("streetAddress1"),
-        city: data.get("city1"),
-        postcode: data.get("postcode1"),
-        country: data.get("country1"),
-      },
-      items: [...items],
-      total: calculateTotal(),
-    })
+    const invoice = formDataToObject(data, items, status);
+    setDoc(doc(db, user.uid, generateId()), invoice)
       .then(() => console.log("document created"))
       .catch((error) => console.log(error));
 

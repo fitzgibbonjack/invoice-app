@@ -20,10 +20,10 @@
     font-weight: 700;
   }
 }
-
-@media screen and (min-width: 66em) {
+@media screen and (min-width: 48em) {
   .new__form {
     background-color: var(--clr-bg-secondary);
     padding: 2rem;
+    border-radius: var(--br-300);
   }
 }

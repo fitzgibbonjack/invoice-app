@@ -24,8 +24,11 @@ export default function NewPage() {
       exit={{ opacity: 0, x: "10rem" }}
     >
       <GoBack />
+      <h1 className="new__title">New Invoice</h1>
+
+      <NewInvoiceControls itemCount={itemCount} />
+
       <section className="new">
-        <h1 className="new__title">New Invoice</h1>
         <form className="new__form" id="newInvoice">
           <fieldset name="senderAddress">
             <legend className="form__legend">Bill From</legend>
@@ -71,8 +74,6 @@ export default function NewPage() {
           </fieldset>
         </form>
       </section>
-
-      <NewInvoiceControls itemCount={itemCount} />
     </motion.main>
   );
 }
