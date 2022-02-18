@@ -1,5 +1,5 @@
 import React, { useContext, useState, useEffect } from "react";
-import { collection, onSnapshot, getDocs } from "firebase/firestore";
+import { collection, onSnapshot, orderBy, query } from "firebase/firestore";
 import { db, auth } from "../firebase";
 import { onAuthStateChanged } from "firebase/auth";
 import { snapshotToObjectsArray } from "../helpers/snapshot";
@@ -19,8 +19,9 @@ export function InvoiceProvider({ children }) {
       setLoading(true);
       if (user != null) {
         const collectionRef = collection(db, user.uid);
-        onSnapshot(collectionRef, (docs) => {
-          const data = snapshotToObjectsArray(docs);
+        const sortQuery = query(collectionRef, orderBy("createdAt", "desc"));
+        onSnapshot(sortQuery, (snapshot) => {
+          const data = snapshotToObjectsArray(snapshot);
           setInvoices(data);
           setLoading(false);
         });

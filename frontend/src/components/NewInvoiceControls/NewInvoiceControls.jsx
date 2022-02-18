@@ -19,11 +19,32 @@ export default function NewInvoiceControls({ itemCount }) {
       form.reportValidity();
       return;
     }
+
+    // items form data to array of objects
+    let items = [];
+    for (let i = 0; i < itemCount; i++) {
+      items.push({
+        name: data.get(`itemName${i}`),
+        // data multiplied by 1 to ensure type is number
+        quantity: data.get(`quantity${i}`) * 1,
+        price: data.get(`price${i}`) * 1,
+        total: data.get(`quantity${i}`) * data.get(`price${i}`),
+      });
+    }
+
     // calculate payment due date
     const paymentDue =
       Date.now() + data.get("paymentTerms") * 24 * 60 * 60 * 1000;
 
-    const calculateTotal = (items) => {};
+    // calculate total
+    const calculateTotal = () => {
+      console.log(items);
+      let total = 0;
+      items.forEach((item) => {
+        total += item.total;
+      });
+      return total;
+    };
 
     // add invoice to firestore
     setDoc(doc(db, user.uid, generateId()), {
@@ -51,16 +72,7 @@ export default function NewInvoiceControls({ itemCount }) {
       .then(() => console.log("document created"))
       .catch((error) => console.log(error));
 
-    // items form data to array of objects
-    let items = [];
-    for (let i = 0; i < itemCount; i++) {
-      items.push({
-        name: data.get(`itemName${i}`),
-        quantity: data.get(`quantity${i}`),
-        price: data.get(`price${i}`),
-        total: data.get(`quantity${i}`) * data.get(`price${i}`),
-      });
-    }
+    navigate("/");
   };
 
   return (

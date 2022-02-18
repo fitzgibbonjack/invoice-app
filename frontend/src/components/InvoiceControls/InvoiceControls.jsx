@@ -10,7 +10,6 @@ export default function InvoiceControls({ invoice }) {
   const location = useLocation();
 
   const handleMarkPaid = () => {
-    if (invoice.status === "paid") return;
     const invoiceRef = doc(db, user.uid, invoice.id);
     updateDoc(invoiceRef, { status: "paid" })
       .then(() => console.log("status changed to paid"))
@@ -29,7 +28,11 @@ export default function InvoiceControls({ invoice }) {
         Delete
       </Link>
 
-      <button className="button button--1" onClick={handleMarkPaid}>
+      <button
+        className="button button--1"
+        onClick={handleMarkPaid}
+        disabled={invoice.status === "paid"}
+      >
         Mark as Paid
       </button>
     </span>

@@ -18,7 +18,7 @@ export default function NewPage() {
 
   return (
     <motion.main
-      className="container bg--secondary"
+      className="container"
       initial={{ opacity: 0, x: "10rem" }}
       animate={{ opacity: 1, x: 0 }}
       exit={{ opacity: 0, x: "10rem" }}

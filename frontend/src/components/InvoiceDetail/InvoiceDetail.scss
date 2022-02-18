@@ -51,6 +51,7 @@
 .detail__item {
   width: 100%;
   font-weight: 700;
+  text-transform: none;
 
   display: grid;
   grid-template-columns: repeat(2, auto);
@@ -84,8 +85,8 @@
 // MEDIA QUERY
 @media screen and (min-width: 48em) {
   .invoiceDetail,
-  .item,
-  .total {
+  .detail__item,
+  .detail__total {
     padding: 2rem;
   }
 
@@ -110,14 +111,14 @@
   .Date ~ .Date {
     grid-area: 3 / 1 / 4 / 2;
   }
-  .clientEmail {
+  .detail__clientEmail {
     grid-area: 2 / 3 / 4 / 4;
   }
-  .items {
+  .detail__items {
     grid-area: 4 / 1 / 5 / 4;
     margin-top: 1rem;
   }
-  .total {
+  .detail__total {
     grid-area: 5 / 1 / 6 / 4;
   }
 }

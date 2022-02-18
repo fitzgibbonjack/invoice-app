@@ -8,6 +8,10 @@
   align-items: center;
 }
 
+.fs-inherit {
+  font-size: inherit;
+}
+
 .hide-for-mobile {
   @media screen and (max-width: 48em) {
     display: none;
