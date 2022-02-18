@@ -11,7 +11,7 @@ import Delete from "./Delete/Delete";
 import ResetPass from "./ResetPass/ResetPass";
 import InvoicesPage from "../pages/Invoices/Invoices";
 import InvoicePage from "../pages/Invoice/Invoice";
-import NewInvoice from "../pages/NewInvoice/NewInvoice";
+import NewPage from "../pages/New/New";
 import ProtectedRoute from "./ProtectedRoute/ProtectedRoute";
 import "./App.scss";
 
@@ -29,7 +29,7 @@ export default function App() {
             <Route
               path="/new"
               exact
-              element={<ProtectedRoute children={<NewInvoice />} />}
+              element={<ProtectedRoute children={<NewPage />} />}
             />
             <Route
               path="/:invoiceId"

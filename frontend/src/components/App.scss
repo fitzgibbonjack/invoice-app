@@ -5,8 +5,7 @@ body {
 
 .container {
   margin-inline: auto;
-  padding-top: 7rem;
-  padding-inline: 1.5rem;
+  padding: 7rem 1.5rem;
   max-width: 52rem;
 
   @media screen and (min-width: 48em) {
@@ -15,12 +14,6 @@ body {
   }
   @media screen and (min-width: 66em) {
     padding-top: 4rem;
-  }
-}
-
-.hide-for-mobile {
-  @media screen and (max-width: 48em) {
-    display: none;
   }
 }
 

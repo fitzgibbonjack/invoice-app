@@ -1,0 +1,25 @@
+.itemInput {
+  display: grid;
+  gap: 1.25rem 1rem;
+  grid-template-columns: repeat(3, 1fr) auto;
+
+  label:first-of-type {
+    grid-column: 1 / 5;
+  }
+}
+
+.item__total {
+  span {
+    display: flex;
+    align-items: center;
+    height: 3rem;
+    margin-top: 0.625rem;
+    font-weight: 700;
+  }
+}
+
+.item__delete {
+  padding: 0.5rem;
+  padding-bottom: 1.1rem;
+  align-self: end;
+}

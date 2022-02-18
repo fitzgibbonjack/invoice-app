@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { AnimatePresence, motion } from "framer-motion";
+import { motion } from "framer-motion";
 
 import {
   TextInput,
@@ -8,15 +8,17 @@ import {
   SelectInput,
 } from "../../components/Input/Input";
 import GoBack from "../../components/GoBack/GoBack";
-import { ReactComponent as DeleteIcon } from "../../assets/icon-delete.svg";
-import "./NewInvoice.scss";
+import ItemInput from "../../components/ItemInput/ItemInput";
+import NewInvoiceControls from "../../components/NewInvoiceControls/NewInvoiceControls";
+import "./New.scss";
 
-export default function New() {
-  const [itemCount, setItemCount] = useState();
+export default function NewPage() {
+  const [itemCount, setItemCount] = useState(1);
+  let i = 0;
 
   return (
     <motion.main
-      className="container"
+      className="container bg--secondary"
       initial={{ opacity: 0, x: "10rem" }}
       animate={{ opacity: 1, x: 0 }}
       exit={{ opacity: 0, x: "10rem" }}
@@ -24,22 +26,21 @@ export default function New() {
       <GoBack />
       <section className="new">
         <h1 className="new__title">New Invoice</h1>
-
         <form className="new__form" id="newInvoice">
           <fieldset name="senderAddress">
             <legend className="form__legend">Bill From</legend>
-            <AddressInput />
+            <AddressInput id={0} />
           </fieldset>
 
           <fieldset name="clientDetails">
             <legend className="form__legend">Bill To</legend>
             <TextInput name="clientName" />
             <TextInput name="clientEmail" type="email" />
-            <AddressInput />
+            <AddressInput id={1} />
           </fieldset>
 
           <fieldset name="projectDetails">
-            <DatePicker name="invoiceDate" />
+            {/* <DatePicker name="invoiceDate" /> */}
             <SelectInput name="paymentTerms">
               <option value="1">Net 1 Day</option>
               <option value="7">Net 7 Days</option>
@@ -49,56 +50,29 @@ export default function New() {
             <TextInput name="projectDescription" />
           </fieldset>
 
-          <fieldset name="items" style={{ gap: "3rem" }}>
+          <fieldset name="items">
             <legend className="form__legend">Item List</legend>
 
-            <Item />
+            <ul style={{ display: "grid", gap: "3rem" }}>
+              {[...Array(itemCount)].map(() => (
+                <li key={i++}>
+                  <ItemInput i={i} />
+                </li>
+              ))}
+            </ul>
 
-            <button type="button" className="button button--2 items__add">
+            <button
+              type="button"
+              className="button button--2 items__add"
+              onClick={() => setItemCount(itemCount + 1)}
+            >
               Add New Item
             </button>
           </fieldset>
         </form>
       </section>
 
-      <Controls />
+      <NewInvoiceControls itemCount={itemCount} />
     </motion.main>
-  );
-}
-
-function Item() {
-  const removeItem = (e) => {
-    const itemDiv = e.currentTarget.parentElement;
-    itemDiv.remove();
-  };
-
-  return (
-    <motion.div className="new__item">
-      <TextInput name="itemName" />
-      <TextInput name="quantity" />
-      <TextInput name="price" />
-      <label className="item__total">
-        Total
-        <span className="input--text">400.00</span>
-      </label>
-      <button
-        className="item__delete"
-        onClick={removeItem}
-        type="button"
-        aria-label="remove item"
-      >
-        <DeleteIcon aria-hidden="true" />
-      </button>
-    </motion.div>
-  );
-}
-
-function Controls() {
-  return (
-    <aside className="new__controls">
-      <button className="button button--2">Discard</button>
-      <button className="button button--3">Save as Draft</button>
-      <button className="button button--1">Save &amp; Send</button>
-    </aside>
   );
 }

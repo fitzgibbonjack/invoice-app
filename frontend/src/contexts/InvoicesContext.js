@@ -2,7 +2,7 @@ import React, { useContext, useState, useEffect } from "react";
 import { collection, onSnapshot, getDocs } from "firebase/firestore";
 import { db, auth } from "../firebase";
 import { onAuthStateChanged } from "firebase/auth";
-import { snapshotToObjectsArray } from "../helpers/firestore";
+import { snapshotToObjectsArray } from "../helpers/snapshot";
 
 const InvoicesContext = React.createContext();
 

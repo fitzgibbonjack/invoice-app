@@ -26,7 +26,7 @@ export default function InvoiceDetail({ data }) {
 // COMPONENTS
 function Description({ data }) {
   return (
-    <div className="description">
+    <div className="detail__description">
       <h1>
         <span className="txt--secondary">#</span>
         {data.id}
@@ -52,7 +52,7 @@ function Address({ data, name, title }) {
       {name && <p>{name}</p>}
       <p>{data.street}</p>
       <p>{data.city}</p>
-      <p>{data.postcode}</p>
+      <p style={{ textTransform: "uppercase" }}>{data.postcode}</p>
       <p>{data.country}</p>
     </div>
   );
@@ -60,7 +60,7 @@ function Address({ data, name, title }) {
 
 function ClientEmail({ data }) {
   return (
-    <div className="clientEmail">
+    <div className="detail__clientEmail">
       <h2>Sent To</h2>
       <p>{data}</p>
     </div>
@@ -70,9 +70,9 @@ function ClientEmail({ data }) {
 function Items({ data }) {
   let counter = 1;
   return (
-    <ul className="items">
+    <ul className="detail__items">
       {data.map((item) => (
-        <li className="item" key={counter++}>
+        <li className="detail__item" key={counter++}>
           <h2>{item.name}</h2>
           <p>{`${item.quantity} x ${formatCurrency(item.price)}`}</p>
           <p>{formatCurrency(item.total)}</p>
@@ -84,7 +84,7 @@ function Items({ data }) {
 
 function Total({ data }) {
   return (
-    <div className="total">
+    <div className="detail__total">
       <p>Grand Total</p>
       <p>{formatCurrency(data)}</p>
     </div>
