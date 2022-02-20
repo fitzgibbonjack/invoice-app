@@ -50,7 +50,7 @@ export default function Signup() {
         <button
           disabled={loading}
           type="submit"
-          className="signup__submit button button--1"
+          className="signup__submit button--1"
         >
           Sign up
         </button>

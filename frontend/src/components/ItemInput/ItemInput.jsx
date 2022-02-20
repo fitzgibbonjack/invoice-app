@@ -20,10 +20,12 @@ export default function ItemInput({ i }) {
       <TextInput
         name={`quantity${i}`}
         onChange={(e) => setPriceVal(e.target.value)}
+        type="number"
       />
       <TextInput
         name={`price${i}`}
         onChange={(e) => setQuantityVal(e.target.value)}
+        type="number"
       />
       <label className="item__total">
         Total

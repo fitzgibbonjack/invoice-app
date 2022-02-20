@@ -48,7 +48,7 @@ export default function Login() {
         <button
           disabled={loading}
           type="submit"
-          className="button button--1 login__submit"
+          className="button--1 login__submit"
         >
           Log in
         </button>

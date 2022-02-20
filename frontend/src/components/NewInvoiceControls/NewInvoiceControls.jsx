@@ -47,15 +47,11 @@ export default function NewInvoiceControls({ itemCount }) {
 
   return (
     <aside className="new__controls">
-      <button
-        className="button button--2"
-        onClick={() => navigate("/")}
-        type="button"
-      >
+      <button className="button--2" onClick={() => navigate("/")} type="button">
         Discard
       </button>
       <button
-        className="button button--3"
+        className="button--3"
         type="submit"
         form="newInvoice"
         onClick={(e) => saveInvoice(e, "draft")}
@@ -63,7 +59,7 @@ export default function NewInvoiceControls({ itemCount }) {
         Save as Draft
       </button>
       <button
-        className="button button--1"
+        className="button--1"
         type="submit"
         form="newInvoice"
         onClick={(e) => saveInvoice(e, "pending")}

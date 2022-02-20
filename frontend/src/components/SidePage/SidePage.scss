@@ -22,8 +22,9 @@
     border-radius: 0 var(--br-500) var(--br-500) 0;
   }
 }
-@media screen and (min-width: 6em) {
+@media screen and (min-width: 66em) {
   .sidePage {
-    inset: 0 0 0 var(--logo-size);
+    top: 0;
+    left: var(--logo-size);
   }
 }

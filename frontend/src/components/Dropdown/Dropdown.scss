@@ -1,3 +1,5 @@
+@import "../../base/mixins.scss";
+
 .dropdown {
   position: absolute;
   top: calc(var(--logo-size) - 0.25rem);
@@ -20,8 +22,7 @@
 
 // DROPDOWN ITEM
 .dropdown__item {
-  display: flex;
-  align-items: center;
+  @include setFlex(center);
   width: 10rem;
   height: 1.5rem;
   border-radius: var(--br-400);

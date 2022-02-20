@@ -42,7 +42,7 @@ export default function Splash({ login }) {
           <Link
             to="/signup"
             state={{ background: location }}
-            className="button button--1"
+            className="button--1"
           >
             Create account
           </Link>

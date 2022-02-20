@@ -8,6 +8,7 @@ import "./SidePage.scss";
 
 export default function SidePage({ title, children }) {
   const navigate = useNavigate();
+  let hasClosed = false;
 
   const closeSide = () => {
     navigate(-1);
@@ -38,9 +39,9 @@ export default function SidePage({ title, children }) {
       <motion.section
         className="side__content"
         onClick={(e) => e.stopPropagation()}
-        initial={{ x: -250 }}
+        initial={{ x: -200 }}
         animate={{ x: 0 }}
-        exit={{ x: -250 }}
+        exit={{ x: -200 }}
       >
         <GoBack className="hide-for-desktop" />
         <h1 className="side__title">{title}</h1>

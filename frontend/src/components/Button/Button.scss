@@ -1,22 +1,28 @@
-.button {
+@import "../../base/mixins.scss";
+
+@mixin button($bg-color, $bg-color-hover, $color) {
   height: 3rem;
+  gap: 0.5rem;
   min-width: 4.5rem;
   padding-inline: 1rem;
   border-radius: 2rem;
   transition: background 0.5s ease-in-out;
-  gap: 0.5rem;
+  @include setFlex(center, center);
 
-  &.icon {
-    padding-inline: 0.5rem 1rem;
+  background-color: $bg-color;
+  color: $color;
+  &:hover {
+    background-color: $bg-color-hover;
   }
 }
 
 .button__icon {
-  background-color: white;
-  border-radius: 50%;
   width: 2rem;
   height: 2rem;
+  border-radius: 50%;
   margin-right: auto;
+  background-color: white;
+  @include setFlex(center, center);
 
   svg {
     width: 0.625rem;
@@ -24,40 +30,26 @@
   }
 }
 
-.button,
-.button__icon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
 // VARIANTS
 .button--1 {
-  background-color: var(--clr-purple-400);
-  &:hover {
-    background-color: var(--clr-purple-300);
+  @include button(var(--clr-purple-400), var(--clr-purple-300), white);
+  &.icon {
+    padding-inline: 0.5rem 1rem;
   }
 }
 
-.button.button--2 {
-  background-color: hsla(233, 33%, 95%, 1);
-  color: var(--clr-purple-200);
-  &:hover {
-    background-color: var(--clr-purple-000);
-  }
+.button--2 {
+  @include button(
+    hsla(233, 33%, 95%, 1),
+    var(--clr-purple-000),
+    var(--clr-purple-200)
+  );
 }
 
 .button--3 {
-  background-color: var(--clr-purple-500);
-  color: var(--clr-purple-100);
-  &:hover {
-    background-color: var(--clr-purple-700);
-  }
+  @include button(var(--clr-purple-500), var(--clr-purple-100), white);
 }
 
 .button--4 {
-  background-color: var(--clr-red-400);
-  &:hover {
-    background-color: var(--clr-red-300);
-  }
+  @include button(var(--clr-red-400), var(--clr-red-300), white);
 }

@@ -42,7 +42,7 @@ export default function ResetPass() {
         <button
           disabled={loading}
           type="submit"
-          className="reset__submit button button--1"
+          className="reset__submit button--1"
         >
           Get reset link
         </button>

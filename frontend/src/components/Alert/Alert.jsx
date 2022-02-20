@@ -21,8 +21,6 @@ export default function Alert({ type, children, className }) {
   }
 
   return (
-    <p className={`alert--${variant} ${className} alert txt--fw-700`}>
-      {children}
-    </p>
+    <p className={`txt--fw-700 alert--${variant} ${className}`}>{children}</p>
   );
 }

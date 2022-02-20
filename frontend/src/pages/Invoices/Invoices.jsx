@@ -13,9 +13,6 @@ import { ReactComponent as PlusIcon } from "../../assets/icon-plus.svg";
 import "./Invoices.scss";
 
 export default function InvoicesPage() {
-  const navigate = useNavigate();
-  const location = useLocation();
-
   const currentUser = useUser();
   const invoices = useInvoices();
   const [filtered, setFiltered] = useState();
@@ -33,27 +30,7 @@ export default function InvoicesPage() {
         animate={{ opacity: 1, x: 0 }}
         exit={{ opacity: 0, x: "-10rem" }}
       >
-        <aside className="invoices__controls">
-          <span>
-            <h1 className="invoices__title">Invoices</h1>
-            <p className="invoices__remain">
-              {formatRemaining(invoices, filtered)}
-            </p>
-          </span>
-
-          <span>
-            <Filters setFiltered={setFiltered} />
-            <Button
-              className="invoices__add"
-              icon={<PlusIcon />}
-              onClick={() =>
-                navigate("/new", { state: { background: location } })
-              }
-            >
-              New
-            </Button>
-          </span>
-        </aside>
+        <Controls props={[filtered, setFiltered]} />
 
         <section>
           <ol>
@@ -74,5 +51,34 @@ export default function InvoicesPage() {
 
       {invoices.length === 0 && <Splash />}
     </>
+  );
+}
+
+function Controls({ props }) {
+  const navigate = useNavigate();
+  const location = useLocation();
+  const invoices = useInvoices();
+  const [filtered, setFiltered] = props;
+
+  return (
+    <aside className="invoices__controls">
+      <span>
+        <h1 className="invoices__title">Invoices</h1>
+        <p className="invoices__remain">
+          {formatRemaining(invoices, filtered)}
+        </p>
+      </span>
+
+      <span>
+        <Filters setFiltered={setFiltered} />
+        <Button
+          className="invoices__add"
+          icon={<PlusIcon />}
+          onClick={() => navigate("/new", { state: { background: location } })}
+        >
+          New
+        </Button>
+      </span>
+    </aside>
   );
 }

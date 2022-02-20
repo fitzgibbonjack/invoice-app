@@ -34,7 +34,7 @@ export default function Delete() {
         be undone.
       </p>
 
-      <button className="button button--4" onClick={handleDelete}>
+      <button className="button--4" onClick={handleDelete}>
         Delete
       </button>
     </Modal>

@@ -18,18 +18,18 @@ export default function InvoiceControls({ invoice }) {
 
   return (
     <span className="card detail__controls">
-      <button className="button button--2">Edit</button>
+      <button className="button--2">Edit</button>
 
       <Link
         to={`/${invoice.id}/delete`}
-        className="button button--4"
+        className="button--4"
         state={{ background: location, id: invoice.id }}
       >
         Delete
       </Link>
 
       <button
-        className="button button--1"
+        className="button--1"
         onClick={handleMarkPaid}
         disabled={invoice.status === "paid"}
       >

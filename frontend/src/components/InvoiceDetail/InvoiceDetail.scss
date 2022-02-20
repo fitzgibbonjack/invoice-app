@@ -1,3 +1,5 @@
+@import "../../base/mixins.scss";
+
 .invoiceDetail,
 .detail__item,
 .detail__total,
@@ -7,7 +9,7 @@
 .detail__items,
 .detail__tableTitles {
   background-color: hsla(231, 67%, 99%, 1);
-  border-radius: 0 0 var(--br-400) var(--br-400);
+  border-radius: var(--br-400) var(--br-400) 0 0;
 }
 
 .invoiceDetail {
@@ -42,10 +44,7 @@
 }
 
 .detail__total {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-
+  @include setFlex(center, space-between);
   background-color: var(--clr-purple-500);
   margin-top: -2rem;
   border-radius: 0 0 var(--br-400) var(--br-400);

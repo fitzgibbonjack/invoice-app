@@ -54,4 +54,11 @@ body.dark-mode {
   .items {
     background-color: var(--clr-purple-600);
   }
+  .alert--secondary {
+    background-color: hsla(240, 9%, 95%, 0.15);
+  }
+  .detail__items,
+  .detail__tableTitles {
+    background-color: var(--clr-bg);
+  }
 }

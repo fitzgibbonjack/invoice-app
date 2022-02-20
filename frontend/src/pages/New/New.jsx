@@ -1,14 +1,10 @@
 import React, { useState } from "react";
-import { motion } from "framer-motion";
-
 import {
   TextInput,
   AddressInput,
-  DatePicker,
   SelectInput,
 } from "../../components/Input/Input";
 import SidePage from "../../components/SidePage/SidePage";
-import GoBack from "../../components/GoBack/GoBack";
 import ItemInput from "../../components/ItemInput/ItemInput";
 import NewInvoiceControls from "../../components/NewInvoiceControls/NewInvoiceControls";
 import "./New.scss";
