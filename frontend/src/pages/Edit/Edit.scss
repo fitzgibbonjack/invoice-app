@@ -1,26 +1,27 @@
 @import "../../base/mixins.scss";
 
 .edit__controls.card {
-  @include setFlex(null, right);
-  gap: 0.5rem;
-  position: fixed;
-  inset: auto 0 0 0;
+	@include setFlex(null, right);
+	gap: 0.5rem;
+	position: fixed;
+	inset: auto 0 0 0;
 
-  background-color: var(--clr-bg-secondary);
-  box-shadow: 0px 10px 50px 10px var(--clr-shadow);
-  padding: 1.25rem 1.5rem;
+	background-color: var(--clr-bg-secondary);
+	box-shadow: 0px 10px 50px 10px var(--clr-shadow);
+	padding: 1.25rem 1.5rem;
 }
 
+// MEDIA QUERIES
 @media screen and (min-width: 48em) {
-  .edit__controls.card {
-    display: grid;
-    gap: 1rem;
-    grid-template-columns: repeat(3, 1fr);
-    position: initial;
-    padding: initial;
-    padding-top: 2.5rem;
+	.edit__controls.card {
+		display: grid;
+		gap: 1rem;
+		grid-template-columns: repeat(3, 1fr);
+		position: initial;
+		padding: initial;
+		padding-top: 2.5rem;
 
-    box-shadow: none;
-    background-color: transparent;
-  }
+		box-shadow: none;
+		background-color: transparent;
+	}
 }

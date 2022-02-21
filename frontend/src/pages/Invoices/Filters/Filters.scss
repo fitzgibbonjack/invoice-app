@@ -1,0 +1,31 @@
+.filters__toggle {
+	color: var(--clr-purple-700);
+	transition: opacity 0.5s ease-in-out;
+
+	&::after {
+		content: url("../../../assets/icon-arrow-down.svg");
+		margin-left: 0.75rem;
+		display: inline-block;
+		transition: transform 0.5s ease-in-out;
+	}
+
+	&.true::after {
+		transform: scaleY(-1);
+	}
+
+	&:hover {
+		opacity: 0.75;
+	}
+}
+
+.filters__dropdown {
+	padding: 1.5rem;
+	inset: initial;
+	top: 2.8rem;
+	right: 45%;
+}
+
+.filters__remove {
+	display: block;
+	margin: 0.75rem auto 0 auto;
+}

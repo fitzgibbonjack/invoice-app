@@ -1,0 +1,21 @@
+@import "../../base/mixins.scss";
+
+.dropdown__item {
+	@include setFlex(center);
+	width: 10rem;
+	height: 1.5rem;
+	border-radius: var(--br-400);
+	padding: 1.25rem 0.5rem;
+	color: var(--clr-purple-500);
+
+	svg {
+		--size: 1.4rem;
+		height: var(--size);
+		width: var(--size);
+		margin-right: 0.6rem;
+		filter: var(--fltr-purple-500);
+	}
+	&:hover {
+		background-color: var(--clr-bg);
+	}
+}

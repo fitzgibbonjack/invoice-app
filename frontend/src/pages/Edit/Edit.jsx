@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 import { useInvoices } from "../../contexts/InvoicesContext";
 
 import SidePage from "../../components/SidePage/SidePage";
-import InvoiceInput from "../../components/InvoiceInput/InvoiceInput";
+import InvoiceInput from "../../components/Input/Invoice/Invoice";
 import "./Edit.scss";
 
 export default function EditPage() {
@@ -12,7 +12,6 @@ export default function EditPage() {
 	const invoices = useInvoices();
 	const params = useParams();
 
-	// invoice consts
 	const invoiceId = params.invoiceId;
 	const [invoice] = invoices.filter((obj) => obj.id === invoiceId);
 

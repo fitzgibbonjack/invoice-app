@@ -1,42 +1,21 @@
 @import "../../base/mixins.scss";
 
 .dropdown {
-  position: absolute;
-  top: calc(var(--logo-size) - 0.25rem);
-  right: 0;
+	position: absolute;
+	top: calc(var(--logo-size) - 0.25rem);
+	right: 0;
 
-  box-shadow: 0px 0px 10px 0px rgba(72, 84, 159, 0.1);
-  background-color: var(--clr-bg-secondary);
-  border-radius: var(--br-500);
-  padding: 1rem;
-  z-index: 1;
+	box-shadow: 0px 0px 10px 0px rgba(72, 84, 159, 0.1);
+	background-color: var(--clr-bg-secondary);
+	border-radius: var(--br-500);
+	padding: 1rem;
+	z-index: 1;
 }
 
 @media screen and (min-width: 66em) {
-  nav .dropdown {
-    inset: initial;
-    left: calc(var(--logo-size) - 0.25rem);
-    bottom: 0;
-  }
-}
-
-// DROPDOWN ITEM
-.dropdown__item {
-  @include setFlex(center);
-  width: 10rem;
-  height: 1.5rem;
-  border-radius: var(--br-400);
-  padding: 1.25rem 0.5rem;
-  color: var(--clr-purple-500);
-
-  svg {
-    --size: 1.4rem;
-    height: var(--size);
-    width: var(--size);
-    margin-right: 0.6rem;
-    filter: var(--fltr-purple-500);
-  }
-  &:hover {
-    background-color: var(--clr-bg);
-  }
+	nav .dropdown {
+		inset: initial;
+		left: calc(var(--logo-size) - 0.25rem);
+		bottom: 0;
+	}
 }

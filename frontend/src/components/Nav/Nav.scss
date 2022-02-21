@@ -1,100 +1,100 @@
 @import "../../base/mixins.scss";
 
 :root {
-  --logo-size: 5rem;
+	--logo-size: 5rem;
 }
 
-// NAV
+// CONTAINER
 .nav {
-  position: fixed;
-  inset: 0 0 auto 0;
-  padding-right: 1.25rem;
-  background-color: var(--clr-purple-500);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  --gap: 1.5rem;
-  gap: var(--gap);
-  transition: background 0.5s ease-in-out;
-  z-index: 200;
+	position: fixed;
+	inset: 0 0 auto 0;
+	padding-right: 1.25rem;
+	background-color: var(--clr-purple-500);
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	--gap: 1.5rem;
+	gap: var(--gap);
+	transition: background 0.5s ease-in-out;
+	z-index: 200;
 }
 
 // LOGO
 .nav__logo {
-  @include setFlex(center, center);
-  background-color: var(--clr-purple-400);
-  border-radius: 0 var(--br-500) var(--br-500) 0;
-  overflow: hidden;
-  position: relative;
-  z-index: 0;
+	@include setFlex(center, center);
+	background-color: var(--clr-purple-400);
+	border-radius: 0 var(--br-500) var(--br-500) 0;
+	overflow: hidden;
+	position: relative;
+	z-index: 0;
 
-  &:before {
-    content: "";
-    position: absolute;
-    top: 50%;
-    background-color: var(--clr-purple-300);
-    border-radius: var(--br-500) 0 0 0;
-    z-index: -1;
-  }
+	&:before {
+		content: "";
+		position: absolute;
+		top: 50%;
+		background-color: var(--clr-purple-300);
+		border-radius: var(--br-500) 0 0 0;
+		z-index: -1;
+	}
 }
 
 .nav__logo,
 .nav__logo::before {
-  height: var(--logo-size);
-  width: var(--logo-size);
+	height: var(--logo-size);
+	width: var(--logo-size);
 }
 
 // AVATAR
 .nav__avatar {
-  button {
-    margin-left: var(--gap);
-  }
-  img {
-    border-radius: 100%;
-    width: 2rem;
-  }
+	button {
+		margin-left: var(--gap);
+	}
+	img {
+		border-radius: 100%;
+		width: 2rem;
+	}
 
-  &::before {
-    content: "";
-    border-left: 1px solid var(--clr-purple-100);
-    position: absolute;
-    inset: 0 auto;
-  }
+	&::before {
+		content: "";
+		border-left: 1px solid var(--clr-purple-100);
+		position: absolute;
+		inset: 0 auto;
+	}
 }
 
 .nav__toggle {
-  margin-left: auto;
+	margin-left: auto;
 }
 
 // MEDIA QUERIES
 @media screen and (min-width: 48em) {
-  .nav {
-    position: relative;
-    inset: unset;
-  }
+	.nav {
+		position: relative;
+		inset: unset;
+	}
 }
 @media screen and (min-width: 66em) {
-  .nav {
-    border-radius: 0 var(--br-500) var(--br-500) 0;
-    padding: 0 0 1.5rem 0;
-    position: fixed;
-    flex-direction: column;
-    width: initial;
-    height: 100%;
-    left: 0;
-  }
+	.nav {
+		border-radius: 0 var(--br-500) var(--br-500) 0;
+		padding: 0 0 1.5rem 0;
+		position: fixed;
+		flex-direction: column;
+		width: initial;
+		height: 100%;
+		left: 0;
+	}
 
-  .nav__toggle {
-    margin-left: 0;
-    margin-top: auto;
-  }
+	.nav__toggle {
+		margin-left: 0;
+		margin-top: auto;
+	}
 
-  .nav__avatar button {
-    margin: var(--gap) 0 0 0;
-  }
+	.nav__avatar button {
+		margin: var(--gap) 0 0 0;
+	}
 
-  .nav__avatar::before {
-    inset: auto 0 auto 0;
-    border-top: 1px solid var(--clr-purple-100);
-  }
+	.nav__avatar::before {
+		inset: auto 0 auto 0;
+		border-top: 1px solid var(--clr-purple-100);
+	}
 }

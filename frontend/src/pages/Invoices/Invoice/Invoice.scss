@@ -1,0 +1,77 @@
+@import "../../../base/mixins.scss";
+
+.invoice {
+	width: 100%;
+	margin-top: 1rem;
+	border: 1px solid transparent;
+	display: grid;
+	padding: 1.5rem;
+	grid-template-columns: repeat(2, auto);
+	grid-template-rows: repeat(3, auto);
+	grid-template-areas:
+		"id client"
+		"due status"
+		"total status";
+
+	&:hover {
+		border: 1px solid var(--clr-purple-400);
+		text-decoration: none;
+		cursor: pointer;
+	}
+	&:active {
+		transform: scale(0.98);
+	}
+}
+
+.invoice__id {
+	grid-area: id;
+}
+.invoice__due {
+	grid-area: due;
+	margin-bottom: 0.5rem;
+}
+.invoice__client {
+	grid-area: client;
+	margin-bottom: 2rem;
+}
+.invoice__total {
+	grid-area: total;
+}
+.invoice__status {
+	grid-area: status;
+}
+.invoice__toDetail {
+	padding: 0.5rem;
+}
+.invoice__client,
+.invoice__status {
+	justify-self: end;
+}
+
+// MEDIA QUERIES
+@media screen and (min-width: 48em) {
+	.invoice {
+		@include setFlex(center, space-between);
+		gap: 4%;
+
+		& > * {
+			margin: 0;
+		}
+	}
+	.invoice__id {
+		min-width: 4rem;
+	}
+	.invoice__client {
+		flex: 0.95;
+	}
+	.invoice__total {
+		flex-shrink: 1;
+		text-align: right;
+	}
+	.invoice__toDetail {
+		margin-left: -1rem;
+	}
+	.invoice__due {
+		min-width: 7.75rem;
+	}
+}
