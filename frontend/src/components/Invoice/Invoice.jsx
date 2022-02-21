@@ -33,6 +33,7 @@ export default function Invoice({ invoice }) {
           src={IconArrowRight}
           className="hide-for-mobile invoice__toDetail"
           aria-hidden="true"
+          alt="arrow pointing right"
         />
       </motion.article>
     </Link>

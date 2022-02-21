@@ -19,9 +19,11 @@ export default function Modal({ title, className, children }) {
 
   useEffect(() => {
     document.body.addEventListener("keyup", closeOnEscKey);
+    document.body.style.overflow = "hidden";
 
     return function cleanup() {
       document.body.removeEventListener("keyup", closeOnEscKey);
+      document.body.style.overflow = null;
     };
   }, []);
 

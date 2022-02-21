@@ -1,13 +1,20 @@
 import React from "react";
 import "./Input.scss";
 
-export function TextInput({ name, type = "text", onChange }) {
+export function TextInput({ name, type = "text", onChange, defaultValue }) {
   let label = name.replace(/([a-z])([A-Z])/g, "$1 $2");
   label = label.replace(/[0-9]/g, "");
   return (
     <label htmlFor={name} className="input--text">
       {label}
-      <input type={type} id={name} name={name} onChange={onChange} required />
+      <input
+        type={type}
+        id={name}
+        name={name}
+        onChange={onChange}
+        defaultValue={defaultValue}
+        required
+      />
     </label>
   );
 }
@@ -25,17 +32,6 @@ export function RadioInput({ value, name, defaultChecked, onClick }) {
       />
       {value}
     </label>
-  );
-}
-
-export function AddressInput({ id = "" }) {
-  return (
-    <span className="input--address">
-      <TextInput name={`streetAddress${id}`} />
-      <TextInput name={`city${id}`} />
-      <TextInput name={`postcode${id}`} />
-      <TextInput name={`country${id}`} />
-    </span>
   );
 }
 

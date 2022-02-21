@@ -5,9 +5,13 @@ import "./ItemInput.scss";
 
 import { formatCurrency } from "../../helpers/format";
 
-export default function ItemInput({ i }) {
-  const [priceVal, setPriceVal] = useState(0);
-  const [quantityVal, setQuantityVal] = useState(0);
+export default function ItemInput({ i, defaultValue }) {
+  const [priceVal, setPriceVal] = useState(
+    defaultValue ? defaultValue.price : 0
+  );
+  const [quantityVal, setQuantityVal] = useState(
+    defaultValue ? defaultValue.quantity : 0
+  );
 
   const removeItem = (e) => {
     const itemDiv = e.currentTarget.parentElement.parentElement;
@@ -16,16 +20,21 @@ export default function ItemInput({ i }) {
 
   return (
     <div className="itemInput">
-      <TextInput name={`itemName${i}`} />
+      <TextInput
+        name={`itemName${i}`}
+        defaultValue={defaultValue && defaultValue.name}
+      />
       <TextInput
         name={`quantity${i}`}
         onChange={(e) => setPriceVal(e.target.value)}
         type="number"
+        defaultValue={defaultValue && defaultValue.quantity}
       />
       <TextInput
         name={`price${i}`}
         onChange={(e) => setQuantityVal(e.target.value)}
         type="number"
+        defaultValue={defaultValue && defaultValue.price}
       />
       <label className="item__total">
         Total

@@ -11,9 +11,12 @@
 .fs-inherit {
   font-size: inherit;
 }
+.bg--secondary {
+  background-color: var(--clr-bg-secondary);
+}
 
 .hide-for-mobile {
-  @media screen and (max-width: 48em) {
+  @media screen and (max-width: 47.99em) {
     display: none;
   }
 }
@@ -22,8 +25,4 @@
   @media screen and (min-width: 48em) {
     display: none;
   }
-}
-
-.bg--secondary {
-  background-color: var(--clr-bg-secondary);
 }

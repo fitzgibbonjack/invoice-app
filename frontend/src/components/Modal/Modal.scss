@@ -23,6 +23,7 @@
 .modal__header {
   position: relative;
   margin-bottom: 1.5rem;
+  @include setFlex(center, space-between);
 }
 
 .modal__close {

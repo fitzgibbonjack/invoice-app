@@ -1,0 +1,44 @@
+.invoiceInput {
+  padding-bottom: 6rem;
+  fieldset:not(:first-of-type) {
+    margin-top: 2.5rem;
+    display: grid;
+    gap: 1.25rem 1rem;
+  }
+
+  legend {
+    color: var(--clr-purple-400);
+    font-size: 0.8rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+  }
+}
+
+// ADDRESS INPUT
+.input--address {
+  display: grid;
+  gap: 1.25rem;
+  grid-template-columns: repeat(2, 1fr);
+
+  label:first-of-type,
+  label:last-of-type {
+    grid-column: 1 / 3;
+  }
+}
+
+@media screen and (min-width: 48em) {
+  .invoiceInput {
+    padding-bottom: 0;
+  }
+  .input--address {
+    grid-template-columns: repeat(3, 1fr);
+    label {
+      &:first-of-type {
+        grid-column: 1 / 4;
+      }
+      &:last-of-type {
+        grid-column: unset;
+      }
+    }
+  }
+}

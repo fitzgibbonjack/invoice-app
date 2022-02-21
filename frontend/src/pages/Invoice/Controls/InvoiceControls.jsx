@@ -1,8 +1,8 @@
 import React from "react";
 import { useLocation, Link } from "react-router-dom";
-import { db } from "../../firebase";
+import { db } from "../../../firebase";
 import { doc, updateDoc } from "firebase/firestore";
-import { useUser } from "../../contexts/UserContext";
+import { useUser } from "../../../contexts/UserContext";
 import "./InvoiceControls.scss";
 
 export default function InvoiceControls({ invoice }) {
@@ -18,12 +18,18 @@ export default function InvoiceControls({ invoice }) {
 
   return (
     <span className="card detail__controls">
-      <button className="button--2">Edit</button>
+      <Link
+        to={`/${invoice.id}/edit`}
+        className="button--2"
+        state={{ background: location }}
+      >
+        Edit
+      </Link>
 
       <Link
         to={`/${invoice.id}/delete`}
         className="button--4"
-        state={{ background: location, id: invoice.id }}
+        state={{ background: location }}
       >
         Delete
       </Link>

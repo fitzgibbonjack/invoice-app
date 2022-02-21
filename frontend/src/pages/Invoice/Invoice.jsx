@@ -1,12 +1,12 @@
 import React from "react";
-import { useParams, useLocation, Link } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { motion } from "framer-motion";
 import { useInvoices } from "../../contexts/InvoicesContext";
 
 import GoBack from "../../components/GoBack/GoBack";
 import InvoiceDetail from "../../components/InvoiceDetail/InvoiceDetail";
 import Alert from "../../components/Alert/Alert";
-import InvoiceControls from "../../components/InvoiceControls/InvoiceControls";
+import InvoiceControls from "./Controls/InvoiceControls";
 import "./Invoice.scss";
 
 export default function InvoicePage() {

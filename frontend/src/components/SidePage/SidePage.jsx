@@ -8,7 +8,6 @@ import "./SidePage.scss";
 
 export default function SidePage({ title, children }) {
   const navigate = useNavigate();
-  let hasClosed = false;
 
   const closeSide = () => {
     navigate(-1);
@@ -22,9 +21,11 @@ export default function SidePage({ title, children }) {
 
   useEffect(() => {
     document.body.addEventListener("keyup", closeOnEscKey);
+    document.body.style.overflow = "hidden";
 
     return function cleanup() {
       document.body.removeEventListener("keyup", closeOnEscKey);
+      document.body.style.overflow = null;
     };
   }, []);
 

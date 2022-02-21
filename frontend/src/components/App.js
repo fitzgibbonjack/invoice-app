@@ -12,6 +12,7 @@ import ResetPass from "./ResetPass/ResetPass";
 import InvoicesPage from "../pages/Invoices/Invoices";
 import InvoicePage from "../pages/Invoice/Invoice";
 import NewPage from "../pages/New/New";
+import EditPage from "../pages/Edit/Edit";
 import ProtectedRoute from "./ProtectedRoute/ProtectedRoute";
 import "./App.scss";
 
@@ -40,6 +41,7 @@ export default function App() {
                 <Route path="/signup" element={<Signup />} />
                 <Route path="/reset-password" element={<ResetPass />} />
                 <Route path="/:invoiceId/delete" element={<Delete />} />
+                <Route path="/:invoiceId/edit" element={<EditPage />} />
                 <Route path="/new" exact element={<NewPage />} />
               </Routes>
             )}

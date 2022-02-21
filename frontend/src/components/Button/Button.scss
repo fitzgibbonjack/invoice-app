@@ -13,6 +13,7 @@
   color: $color;
   &:hover {
     background-color: $bg-color-hover;
+    text-decoration: none;
   }
 }
 
