@@ -3,7 +3,7 @@
 .itemInput {
 	display: grid;
 	gap: 1.25rem 1rem;
-	grid-template-columns: repeat(3, 1fr) auto;
+	grid-template-columns: 0.75fr repeat(2, 1fr) auto;
 
 	label:first-of-type {
 		grid-column: 1 / 5;

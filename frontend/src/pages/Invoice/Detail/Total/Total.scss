@@ -1,0 +1,15 @@
+@import "../../../../base/mixins.scss";
+
+.detail__total {
+	@include setFlex(center, space-between);
+	background-color: var(--clr-purple-500);
+	margin-top: -2rem;
+	border-radius: 0 0 var(--br-400) var(--br-400);
+
+	color: white;
+
+	p:nth-of-type(2) {
+		font-size: 1.125rem;
+		font-weight: 700;
+	}
+}

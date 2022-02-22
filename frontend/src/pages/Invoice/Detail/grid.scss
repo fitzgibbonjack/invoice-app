@@ -1,0 +1,67 @@
+.detail__items,
+.detail__tableTitles,
+.detail__total {
+	grid-column: 1 / 3;
+}
+.invoiceDetail {
+	display: grid;
+	grid-template: repeat(5, auto) / repeat(2, 1fr);
+	gap: 2rem;
+}
+.detail__description {
+	grid-area: 1 / 1 / 2 / 3;
+}
+.Address {
+	grid-area: 2 / 1 / 2 / 3;
+}
+.Address ~ .Address {
+	grid-area: 3 / 2 / 5 / 3;
+}
+.Date {
+	grid-area: 3 / 1 / 4 / 2;
+}
+.Date ~ .Date {
+	grid-area: 4 / 1 / 5 / 2;
+}
+.detail__clientEmail {
+	grid-area: 5 / 1 / 6 / 3;
+	text-transform: none;
+}
+.detail__tableTitles {
+	display: grid;
+	grid-template-columns: 2fr 0.5fr repeat(2, 1fr);
+}
+
+// MEDIA QUERY
+@media screen and (min-width: 48em) {
+	.invoiceDetail {
+		grid-template-columns: repeat(3, 1fr);
+		grid-template-rows: repeat(5, auto);
+	}
+	.Address:not(.Address ~ .Address) {
+		grid-area: 1 / 3 / 2 / 4;
+		text-align: right;
+	}
+	.Address ~ .Address {
+		grid-area: 2 / 2 / 4 / 3;
+	}
+	.Date {
+		grid-area: 2 / 1 / 3 / 2;
+	}
+	.Date ~ .Date {
+		grid-area: 3 / 1 / 4 / 2;
+	}
+	.detail__clientEmail {
+		grid-area: 2 / 3 / 4 / 4;
+	}
+	.detail__tableTitles {
+		grid-area: 4 / 1 / 5 / 4;
+		margin-bottom: -3rem;
+	}
+	.detail__items {
+		grid-area: 5 / 1 / 6 / 4;
+	}
+	.detail__total {
+		grid-area: 6 / 1 / 7 / 4;
+	}
+}

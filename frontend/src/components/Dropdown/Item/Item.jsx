@@ -1,4 +1,5 @@
 import React from "react";
+import "./Item.scss";
 
 export default function DropdownItem({ children, onClick, icon }) {
 	return (

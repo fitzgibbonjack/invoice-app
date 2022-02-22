@@ -1,6 +1,13 @@
 import React from "react";
-import { formatDate, formatCurrency } from "../../../helpers/format";
+
+import Address from "./Address/Address";
+import Date from "./Date/Date";
+import Items from "./Items/Items";
+import Description from "./Description/Description";
+import Email from "./Email/Email";
+import Total from "./Total/Total";
 import "./Detail.scss";
+import "./grid.scss";
 
 export default function Detail({ data }) {
 	return (
@@ -14,56 +21,12 @@ export default function Detail({ data }) {
 				title="Bill to"
 				name={data.clientName}
 			/>
-			<ClientEmail data={data.clientEmail} />
+			<Email data={data.clientEmail} />
 
 			<TableTitles />
 			<Items data={data.items} />
 			<Total data={data.total} />
 		</section>
-	);
-}
-
-// COMPONENTS
-function Description({ data }) {
-	return (
-		<div className="detail__description">
-			<h1>
-				<span className="txt--secondary fs-inherit">#</span>
-				{data.id}
-			</h1>
-			<p>{data.description}</p>
-		</div>
-	);
-}
-
-function Date({ data, title }) {
-	return (
-		<div className="Date">
-			<h2>{title}</h2>
-			<p>{formatDate(data.seconds)}</p>
-		</div>
-	);
-}
-
-function Address({ data, name, title }) {
-	return (
-		<div className="Address">
-			{title && <h2>{title}</h2>}
-			{name && <p>{name}</p>}
-			<p>{data.street}</p>
-			<p>{data.city}</p>
-			<p style={{ textTransform: "uppercase" }}>{data.postcode}</p>
-			<p>{data.country}</p>
-		</div>
-	);
-}
-
-function ClientEmail({ data }) {
-	return (
-		<div className="detail__clientEmail">
-			<h2>Sent To</h2>
-			<p>{data}</p>
-		</div>
 	);
 }
 
@@ -74,41 +37,6 @@ function TableTitles() {
 			<p>QTY</p>
 			<p>Price</p>
 			<p>Total</p>
-		</div>
-	);
-}
-
-function Items({ data }) {
-	let counter = 0;
-	return (
-		<ul className="detail__items" aria-label="items">
-			{data.map((item) => (
-				<li className="detail__item" key={counter++}>
-					<h2>{item.name}</h2>
-					<p className="hide-for-mobile" aria-label="item quantity">
-						{item.quantity}
-					</p>
-					<p aria-label="item price">
-						<span className="hide-for-desktop">
-							{item.quantity}
-						</span>
-						<span className="hide-for-desktop">{" x "}</span>
-						<span>{formatCurrency(item.price)}</span>
-					</p>
-					<p aria-label="item total price">
-						{formatCurrency(item.total)}
-					</p>
-				</li>
-			))}
-		</ul>
-	);
-}
-
-function Total({ data }) {
-	return (
-		<div className="detail__total">
-			<p>Grand Total</p>
-			<p>{formatCurrency(data)}</p>
 		</div>
 	);
 }
