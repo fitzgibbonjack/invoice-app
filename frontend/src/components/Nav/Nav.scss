@@ -6,8 +6,7 @@
 
 // CONTAINER
 .nav {
-	position: fixed;
-	inset: 0 0 auto 0;
+	position: relative;
 	padding-right: 1.25rem;
 	background-color: var(--clr-purple-500);
 	display: flex;

@@ -44,7 +44,6 @@ export default function InvoicesPage() {
 					</ol>
 				</section>
 			</motion.main>
-
 			{invoices.length === 0 && <Splash />}
 		</>
 	);
