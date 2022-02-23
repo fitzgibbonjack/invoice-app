@@ -23,7 +23,7 @@ export default function InvoicePage() {
 				animate={{ opacity: 1, x: 0 }}
 				exit={{ opacity: 0, x: "10rem" }}
 			>
-				<GoBack />
+				<GoBack to="/" />
 
 				<aside className="detail__aside">
 					<Status data={invoice.status} />

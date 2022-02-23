@@ -1,12 +1,13 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import "./GoBack.scss";
 
-export default function GoBack({ className }) {
+export default function GoBack({ className, to = -1 }) {
 	const navigate = useNavigate();
+	const location = useLocation();
 
 	const goBack = () => {
-		navigate(-1);
+		navigate(to);
 	};
 
 	return (
