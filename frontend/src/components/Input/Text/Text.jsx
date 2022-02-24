@@ -15,6 +15,7 @@ export default function TextInput({
 			{label}
 			<input
 				type={type}
+				step={type === "number" && "any"}
 				id={name}
 				name={name}
 				onChange={onChange}
