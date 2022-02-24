@@ -26,7 +26,7 @@
 
 <p>Finally, the user can toggle between light and dark mode, in which their last used setting will be saved to localStorage.</p>
 
-<p>I created a <em>Demo account</em> to allow you to be able to use and explore the application, the <em>details</em> are as follows:</p>
+<p>I created a <b>Demo account</b> to allow you to be able to use and explore the application, the <b>details</b> are as follows:</p>
 
 <ul>
    <li>Email: demo@invoiceapp.com</li>
