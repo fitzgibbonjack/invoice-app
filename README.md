@@ -40,7 +40,7 @@ Upon completion of this project, there are a few key areas I feel I have improve
 <ul>
    <li>Authentication, understanding the fundementals of implementation.</li>
    <li>Firestore NoSQL Databse, especially designing it's architecture.</li>
-   <li>SCSS Mixins, reducing repeated CSS<li>
+   <li>SCSS Mixins, reducing repeated CSS</li>
    <li>Database security rules.</li>
    <li>React components, making more reusable components to increase maintainability.</li>
    <li>Routable modals, much easier and cleaner implementation instead of tracking a modal's open state directly.</li>
