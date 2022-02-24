@@ -1,6 +1,6 @@
 <h1>Invoice App</h1>
 <p>A React CRUD app allowing users to create, organise and keep track of invoices.</p>
-<a href="https://www.invoice-app.onrender.com">https://www.invoice-app.onrender.com</a>
+<a href="https://invoice-app.onrender.com">https://invoice-app.onrender.com</a>
 
 <h2>About the project</h2>
 
