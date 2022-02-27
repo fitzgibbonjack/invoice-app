@@ -49,7 +49,7 @@ export default function Nav() {
 
 			<AnimatePresence>
 				{open && currentUser && (
-					<Dropdown>
+					<Dropdown className="nav__dropdown">
 						<DropdownItem icon={<UserIcon />}>
 							Auth timeout
 						</DropdownItem>
