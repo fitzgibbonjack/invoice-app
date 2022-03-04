@@ -38,7 +38,8 @@
 	}
 	.side__content {
 		position: fixed;
-		inset: 0 0 0 var(--logo-size);
+		inset: 0;
+		padding-left: calc(3rem + var(--logo-size));
 		overflow: scroll;
 	}
 }
