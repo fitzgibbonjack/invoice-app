@@ -1,33 +1,33 @@
 @mixin alert($bg-color, $color) {
-  display: block;
-  border-radius: var(--br-300);
-  text-align: center;
-  height: fit-content;
-  text-transform: capitalize;
-  width: initial;
-  background-color: $bg-color;
-  color: $color;
+	display: block;
+	border-radius: var(--br-300);
+	text-align: center;
+	height: fit-content;
+	text-transform: capitalize;
+	width: initial;
+	background-color: $bg-color;
+	color: $color;
 
-  &:not(.alert--error) {
-    min-width: 6.5rem;
-    padding: 0.75rem 0;
-  }
+	&:not(.alert--error) {
+		min-width: 6.5rem;
+		padding: 0.75rem 0;
+	}
 }
 
 // VARIANTS
 .alert--error {
-  @include alert(var(--clr-red-300), var(--clr-red-500));
-  border: 1px solid var(--clr-red-400);
-  padding: 0.75rem 1rem;
-  margin: 1rem 0;
+	@include alert(var(--clr-red-300), var(--clr-red-500));
+	border: 1px solid var(--clr-red-400);
+	padding: 0.75rem 1rem;
+	margin: 1rem 0;
 }
 
 .alert--success {
-  @include alert(var(--clr-green-300), var(--clr-green-400));
+	@include alert(var(--clr-green-300), var(--clr-green-400));
 }
 .alert--pending {
-  @include alert(var(--clr-orange-300), var(--clr-orange-400));
+	@include alert(var(--clr-orange-300), var(--clr-orange-400));
 }
 .alert--secondary {
-  @include alert(hsla(231, 20%, 27%, 0.06), var(--clr-pruple-500));
+	@include alert(hsla(231, 20%, 27%, 0.06), var(--clr-pruple-500));
 }
